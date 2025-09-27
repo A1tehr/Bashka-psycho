@@ -183,7 +183,7 @@ const ProgramDetailPage = () => {
                       <Users className="h-8 w-8 mb-3" />
                       <h4 className="font-semibold text-lg mb-2">Формат</h4>
                       <p className="text-green-100">
-                        {program.type.includes('individual') ? 'Индивидуальные занятия' : Групповые занятия'}
+                        {program.type.includes('individual') ? 'Индивидуальные занятия' : 'Групповые занятия'}
                       </p>
                     </div>
                   </div>
