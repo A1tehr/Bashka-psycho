@@ -146,6 +146,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Contact и Newsletter модели работают"
+      - working: true
+        agent: "testing"
+        comment: "✅ Протестировано: POST /api/contacts успешно создает сообщения с полными данными (имя, email, телефон, тема, сообщение). POST /api/newsletter корректно обрабатывает подписки и предотвращает дублирование email адресов."
   
   - task: "Блог с статьями по психологии"
     implemented: true
