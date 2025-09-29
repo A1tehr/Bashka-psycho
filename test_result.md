@@ -147,11 +147,14 @@ backend:
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Добавлено 6 статей с полным контентом по психологии"
+      - working: true
+        agent: "testing"
+        comment: "✅ Протестировано: GET /api/blog возвращает 6 статей, GET /api/blog/{slug} работает корректно. Была найдена и исправлена проблема с инициализацией - изначально в БД было только 3 статьи из 6, добавлены недостающие 3 статьи. Все API блога работают правильно."
 
 frontend:
   - task: "Современная главная страница с параллакс-эффектами"
