@@ -3,7 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Parallax container */
+/* Advanced Parallax Effects */
 .parallax-container {
   height: 100vh;
   overflow-x: hidden;
@@ -20,11 +20,62 @@ html {
 }
 
 .parallax-back {
+  transform: translateZ(-2px) scale(3);
+  will-change: transform;
+}
+
+.parallax-mid {
   transform: translateZ(-1px) scale(2);
+  will-change: transform;
 }
 
 .parallax-base {
   transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Modern Glass Morphism */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Floating geometric shapes animation */
+@keyframes float-x {
+  0%, 100% { 
+    transform: translateX(0px) translateY(0px); 
+  }
+  33% { 
+    transform: translateX(30px) translateY(-30px); 
+  }
+  66% { 
+    transform: translateX(-20px) translateY(20px); 
+  }
+}
+
+@keyframes float-y {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-40px) rotate(180deg); 
+  }
+}
+
+.floating-shapes {
+  animation: float-x 20s ease-in-out infinite;
+}
+
+.floating-shapes:nth-child(2) {
+  animation: float-y 25s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+.floating-shapes:nth-child(3) {
+  animation: float-x 18s ease-in-out infinite;
+  animation-delay: -10s;
 }
 
 /* Hero section with parallax */
