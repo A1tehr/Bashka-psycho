@@ -131,6 +131,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Модель Appointment с полными данными клиента"
+      - working: true
+        agent: "testing"
+        comment: "✅ Протестировано: POST /api/appointments успешно создает записи с реалистичными данными (имя клиента, телефон, email, данные ребенка, предпочитаемая дата/время, сообщение). Валидация program_id работает корректно."
   
   - task: "API для контактной формы и рассылки"
     implemented: true
