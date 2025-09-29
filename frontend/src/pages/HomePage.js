@@ -376,6 +376,106 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Contact Info Section */}
+      <section className="section-padding bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 scroll-reveal">
+            <h2 className="text-4xl font-bold mb-4">Как с нами связаться</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Мы всегда готовы ответить на ваши вопросы и помочь в выборе программы развития
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Phone */}
+            <div className="text-center scroll-reveal">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Телефон</h3>
+              <p className="text-gray-300 mb-2">+7 (912) 345-67-89</p>
+              <p className="text-gray-300">+7 (495) 123-45-67</p>
+            </div>
+            
+            {/* Address */}
+            <div className="text-center scroll-reveal">
+              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Адрес</h3>
+              <p className="text-gray-300 mb-2">г. Москва</p>
+              <p className="text-gray-300">ул. Психологов, д. 15</p>
+            </div>
+            
+            {/* Working Hours */}
+            <div className="text-center scroll-reveal">
+              <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">График работы</h3>
+              <p className="text-gray-300 mb-2">Пн-Пт: 9:00-20:00</p>
+              <p className="text-gray-300">Сб-Вс: 10:00-18:00</p>
+            </div>
+            
+            {/* WhatsApp */}
+            <div className="text-center scroll-reveal">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MessageCircle className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
+              <p className="text-gray-300 mb-2">Быстрая связь</p>
+              <a 
+                href="https://wa.me/79123456789" 
+                className="text-green-400 hover:text-green-300 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Написать в WhatsApp
+              </a>
+            </div>
+          </div>
+          
+          {/* Social Media */}
+          <div className="mt-16 text-center scroll-reveal">
+            <h3 className="text-2xl font-semibold mb-8">Мы в социальных сетях</h3>
+            <div className="flex justify-center space-x-6">
+              <a 
+                href="https://vk.com/psychocenter" 
+                className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text-white font-bold">ВК</span>
+              </a>
+              <a 
+                href="https://instagram.com/psychocenter" 
+                className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text-white font-bold">IG</span>
+              </a>
+              <a 
+                href="https://t.me/psychocenter" 
+                className="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text-white font-bold">TG</span>
+              </a>
+              <a 
+                href="https://youtube.com/@psychocenter" 
+                className="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text-white font-bold">YT</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
