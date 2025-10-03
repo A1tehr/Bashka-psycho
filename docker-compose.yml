@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: psycho_center_mongodb
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=psychology_center
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    networks:
+      - psycho_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: psycho_center_backend
+    restart: always
+    ports:
+      - "8001:8001"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/psychology_center
+      - PORT=8001
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/app
+    networks:
+      - psycho_network
+    command: uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: psycho_center_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8001
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - psycho_network
+    command: yarn start
+
+networks:
+  psycho_network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
