@@ -35,7 +35,7 @@ const PrivacyPolicyPage = () => {
             </div>
             <div>
               <h1 className="text-4xl font-bold" data-testid="privacy-title">
-                Политика конфиденциальности
+                Политика конфиденциальности персональных данных
               </h1>
               <p className="text-indigo-200 text-lg mt-2">
                 Последнее обновление: 1 января 2025 г.
