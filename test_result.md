@@ -119,6 +119,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✅ Протестировано: GET /api/programs возвращает 6 программ с полной структурой данных (id, type, title, description, goals, age_range, price, duration, faq, image_url). GET /api/programs/{id} работает корректно для получения отдельной программы."
+      - working: true
+        agent: "testing"
+        comment: "✅ Повторно протестировано по запросу пользователя: GET /api/programs возвращает точно 6 программ развития с корректной структурой данных. GET /api/programs/{id} успешно получает отдельные программы. Все эндпоинты работают без ошибок."
   
   - task: "API для записи на консультации"
     implemented: true
