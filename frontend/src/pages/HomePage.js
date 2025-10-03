@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Award, Clock, CheckCircle, Star, Quote, Phone, MapPin, MessageCircle } from 'lucide-react';
 import axios from 'axios';
+import AppointmentModal from '../components/AppointmentModal';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -11,6 +12,8 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProgramId, setSelectedProgramId] = useState(null);
 
   useEffect(() => {
     fetchPrograms();
