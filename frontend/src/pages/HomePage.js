@@ -271,37 +271,50 @@ const HomePage = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {programs.map((program) => (
-                <div key={program.id} className="scroll-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
-                  <div className="h-48 overflow-hidden">
+                <div key={program.id} className="scroll-reveal program-card bg-white rounded-2xl shadow-lg overflow-hidden group">
+                  <div className="h-48 overflow-hidden relative">
                     <img 
                       src={program.image_url} 
                       alt={program.title}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">
+                      <span className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">
                         {program.age_range}
                       </span>
-                      <span className="text-2xl font-bold text-indigo-600">
+                      <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                         {program.price} ₽
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{program.title}</h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      {program.description.substring(0, 120)}...
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                      {program.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                      {program.description}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm text-gray-500 flex items-center">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {program.duration}
+                      </span>
+                    </div>
+                    <div className="flex gap-2 pt-4 border-t border-gray-100">
                       <Link
                         to={`/programs/${program.id}`}
-                        className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors"
+                        className="flex-1 text-center px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
                         data-testid={`program-link-${program.id}`}
                       >
                         Подробнее
-                        <ArrowRight className="inline-block ml-1 h-4 w-4" />
                       </Link>
-                      <span className="text-sm text-gray-500">{program.duration}</span>
+                      <button
+                        onClick={() => openAppointmentModal(program.id)}
+                        className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all"
+                      >
+                        Записаться
+                      </button>
                     </div>
                   </div>
                 </div>
