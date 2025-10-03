@@ -184,14 +184,14 @@ const HomePage = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center scroll-reveal">
-            <Link
-              to="/appointment"
-              className="group bg-white text-indigo-900 px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl btn-hover flex items-center"
+            <button
+              onClick={() => openAppointmentModal()}
+              className="group bg-white text-indigo-900 px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl btn-hover btn-pulse flex items-center"
               data-testid="hero-appointment-btn"
             >
               Записаться на консультацию
               <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </button>
             
             <Link
               to="/programs"
