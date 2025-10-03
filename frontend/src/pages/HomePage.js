@@ -59,6 +59,16 @@ const HomePage = () => {
     }
   };
 
+  const openAppointmentModal = (programId = null) => {
+    setSelectedProgramId(programId);
+    setIsModalOpen(true);
+  };
+
+  const closeAppointmentModal = () => {
+    setIsModalOpen(false);
+    setSelectedProgramId(null);
+  };
+
   const features = [
     {
       icon: Users,
