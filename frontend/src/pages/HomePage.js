@@ -529,6 +529,13 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Appointment Modal */}
+      <AppointmentModal 
+        isOpen={isModalOpen} 
+        onClose={closeAppointmentModal}
+        selectedProgram={selectedProgramId}
+      />
     </div>
   );
 };
