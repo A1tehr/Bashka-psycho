@@ -228,6 +228,45 @@ frontend:
       - working: true
         agent: "main"
         comment: "Добавлены modern parallax effects, glass morphism, floating animations"
+      - working: "NA"
+        agent: "main"
+        comment: "Добавлены анимации для модального окна (fadeIn, slideUp), улучшенные эффекты карточек программ, pulse-glow для CTA кнопок, gradient borders"
+  
+  - task: "Модальное окно записи на занятия"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/AppointmentModal.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Создано всплывающее модальное окно с полями: имя, телефон, email, программа, дата, время, комментарий, информация о ребенке. Интегрировано с API /api/appointments. Добавлены анимации открытия/закрытия"
+  
+  - task: "Политика конфиденциальности"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/PrivacyPolicyPage.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Добавлен официальный документ политики конфиденциальности с юридическим текстом от ООО Леони Кидс, включая термины, определения, правовые основания"
+  
+  - task: "Docker compose configuration"
+    implemented: true
+    working: "NA"
+    file: "/app/docker-compose.yml"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Создан docker-compose.yml с MongoDB, Backend (FastAPI), Frontend (React). Также созданы Dockerfile для backend и frontend"
 
 metadata:
   created_by: "main_agent"
