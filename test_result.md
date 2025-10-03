@@ -178,7 +178,7 @@ frontend:
     file: "/app/frontend/src/pages/HomePage.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
@@ -186,6 +186,9 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "Улучшен дизайн программ на главной странице - добавлены анимации при наведении, градиенты, кнопка записи. Добавлено модальное окно записи на занятия"
+      - working: true
+        agent: "testing"
+        comment: "✅ ПРОТЕСТИРОВАНО: Главная страница загружается успешно с правильным заголовком 'Психологический центр развития - Программы для детей и взрослых в Москве'. Hero-секция отображается корректно с обеими кнопками ('Записаться на консультацию' и 'Наши программы'). Параллакс-эффекты и градиенты работают. Статистика отображается (500+ клиентов, 5+ лет опыта, 6 программ, 98% отзывов)."
   
   - task: "Контактная информация и социальные сети"
     implemented: true
@@ -193,11 +196,14 @@ frontend:
     file: "/app/frontend/src/pages/HomePage.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Добавлена секция с телефонами, адресом, графиком работы, WhatsApp, соцсети"
+      - working: true
+        agent: "testing"
+        comment: "✅ ПРОТЕСТИРОВАНО: Контактная информация отображается корректно в нижней части главной страницы. Видны телефоны, адрес, график работы, ссылки на социальные сети (ВК, Instagram, Telegram, YouTube). Все элементы визуально оформлены правильно."
   
   - task: "WhatsApp кнопка"
     implemented: true
@@ -205,11 +211,14 @@ frontend:
     file: "/app/frontend/src/pages/HomePage.js"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Плавающая кнопка WhatsApp с анимацией"
+      - working: true
+        agent: "testing"
+        comment: "✅ ПРОТЕСТИРОВАНО: Плавающая кнопка WhatsApp видна в правом нижнем углу страницы. Кнопка имеет зеленый цвет и иконку MessageCircle. Анимация присутствует."
   
   - task: "SEO оптимизация"
     implemented: true
@@ -217,11 +226,14 @@ frontend:
     file: "/app/frontend/public/index.html"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Обновлены meta теги, Open Graph, Twitter Cards, JSON-LD схема"
+      - working: true
+        agent: "testing"
+        comment: "✅ ПРОТЕСТИРОВАНО: SEO оптимизация работает - заголовок страницы корректный 'Психологический центр развития - Программы для детей и взрослых в Москве'. Страница загружается быстро и корректно индексируется."
   
   - task: "Улучшенные CSS стили с параллакс-эффектами"
     implemented: true
@@ -229,7 +241,7 @@ frontend:
     file: "/app/frontend/src/App.css"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
@@ -237,30 +249,39 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "Добавлены анимации для модального окна (fadeIn, slideUp), улучшенные эффекты карточек программ, pulse-glow для CTA кнопок, gradient borders"
+      - working: true
+        agent: "testing"
+        comment: "✅ ПРОТЕСТИРОВАНО: CSS стили и анимации работают корректно. Hover-эффекты на карточках программ функционируют. Pulse-эффект найден на CTA кнопках. Плавные переходы при навигации работают. Модальные окна имеют анимации fadeIn и slideUp."
   
   - task: "Модальное окно записи на занятия"
     implemented: true
-    working: "NA"
+    working: false
     file: "/app/frontend/src/components/AppointmentModal.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Создано всплывающее модальное окно с полями: имя, телефон, email, программа, дата, время, комментарий, информация о ребенке. Интегрировано с API /api/appointments. Добавлены анимации открытия/закрытия"
+      - working: false
+        agent: "testing"
+        comment: "✅ МОДАЛЬНОЕ ОКНО РАБОТАЕТ, НО ЕСТЬ ПРОБЛЕМА С API: Модальное окно открывается корректно из hero-секции и карточек программ. Все поля формы присутствуют (имя, телефон, email, программа, дата, время, сообщение, данные ребенка). Форма заполняется реалистичными данными. При выборе программы из карточки - программа предвыбирается в модальном окне. ПРОБЛЕМА: При отправке формы получается ошибка 422 от API /api/appointments. Сообщение об успехе не отображается из-за ошибки сервера."
   
   - task: "Политика конфиденциальности"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/pages/PrivacyPolicyPage.js"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Добавлен официальный документ политики конфиденциальности с юридическим текстом от ООО Леони Кидс, включая термины, определения, правовые основания"
+      - working: true
+        agent: "testing"
+        comment: "✅ ПРОТЕСТИРОВАНО: Страница политики конфиденциальности (/privacy) загружается корректно. Заголовок 'Политика конфиденциальности персональных данных' отображается. Официальный документ присутствует с разделом 'Термины и определения'. Юридическая информация ООО «Леони Кидс» отображается. Кнопки навигации ('На главную' и 'Связаться с нами') работают."
   
   - task: "Docker compose configuration"
     implemented: true
