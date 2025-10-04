@@ -83,7 +83,8 @@ const AppointmentModal = ({ isOpen, onClose, selectedProgram = null }) => {
       preferred_time: '',
       message: '',
       child_name: '',
-      child_age: ''
+      child_age: '',
+      privacy_accepted: false
     });
     setSubmitted(false);
     onClose();
