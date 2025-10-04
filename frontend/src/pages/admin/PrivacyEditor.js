@@ -82,6 +82,7 @@ const PrivacyEditor = () => {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="p-6">
           <ReactQuill
+            ref={quillRef}
             theme="snow"
             value={content}
             onChange={setContent}
