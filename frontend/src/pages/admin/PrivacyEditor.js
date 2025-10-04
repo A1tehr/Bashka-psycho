@@ -10,6 +10,7 @@ const PrivacyEditor = () => {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const quillRef = useRef(null);
   const { getAuthHeader } = useAuth();
   const API_URL = process.env.REACT_APP_BACKEND_URL || '';
 
