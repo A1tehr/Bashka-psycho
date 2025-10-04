@@ -524,7 +524,7 @@ async def initialize_data():
                     {"question": "Можно ли проводить консультации онлайн?", "answer": "Да, возможны как очные, так и онлайн консультации."},
                     {"question": "Что происходит на первой встрече?", "answer": "Знакомство, обсуждение запроса, постановка целей и планирование дальнейшей работы."}
                 ],
-                "image_url": "https://images.pexels.com/photos/7579304/pexels-photo-7579304.jpeg"
+                "image_url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop"
             },
             {
                 "type": "group_child",
