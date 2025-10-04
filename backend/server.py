@@ -545,7 +545,7 @@ async def initialize_data():
                     {"question": "Как формируются группы?", "answer": "Группы комплектуются с учетом возраста, уровня развития и совместимости детей."},
                     {"question": "Что если ребенок стесняется?", "answer": "Наши специалисты помогают застенчивым детям постепенно включиться в групповую работу."}
                 ],
-                "image_url": "https://images.pexels.com/photos/34004605/pexels-photo-34004605.jpeg"
+                "image_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop"
             },
             {
                 "type": "goal_setting",
