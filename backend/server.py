@@ -219,6 +219,32 @@ async def create_program(
     await db.programs.insert_one(program.dict())
     return program
 
+# Protected endpoint - only admin can update programs
+@api_router.put("/programs/{program_id}", response_model=Program)
+async def update_program(
+    program_id: str,
+    program_data: ProgramCreate,
+    current_admin: dict = Depends(get_current_admin)
+):
+    program = await db.programs.find_one({"id": program_id})
+    if not program:
+        raise HTTPException(status_code=404, detail="Program not found")
+    
+    updated_program = Program(**program_data.dict(), id=program_id, created_at=program["created_at"])
+    await db.programs.replace_one({"id": program_id}, updated_program.dict())
+    return updated_program
+
+# Protected endpoint - only admin can delete programs
+@api_router.delete("/programs/{program_id}")
+async def delete_program(
+    program_id: str,
+    current_admin: dict = Depends(get_current_admin)
+):
+    result = await db.programs.delete_one({"id": program_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Program not found")
+    return {"message": "Program deleted successfully"}
+
 # Appointments endpoints
 # Protected - only admin can view all appointments
 @api_router.get("/appointments", response_model=List[Appointment])
