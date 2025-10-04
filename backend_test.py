@@ -572,11 +572,16 @@ def main():
         else:
             # Create an appointment first, then test status update
             programs_success, test_program_id = test_get_programs()
-            if test_program_id:
-                test_create_appointment(test_program_id)
-                appointments_success, appointment_id = test_get_appointments_protected(admin_token)
-                if appointment_id:
-                    results['update_appointment_status'] = test_update_appointment_status(admin_token, appointment_id)
+            if programs_success and test_program_id:
+                # Create appointment first
+                appointment_created = test_create_appointment(test_program_id)
+                if appointment_created:
+                    # Get the appointment ID
+                    appointments_success, appointment_id = test_get_appointments_protected(admin_token)
+                    if appointment_id:
+                        results['update_appointment_status'] = test_update_appointment_status(admin_token, appointment_id)
+                    else:
+                        results['update_appointment_status'] = False
                 else:
                     results['update_appointment_status'] = False
             else:
