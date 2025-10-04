@@ -469,3 +469,44 @@ input:focus, textarea:focus, select:focus {
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s ease-in-out infinite;
 }
+/* Swiper Carousel Styles */
+.programs-carousel {
+  padding-bottom: 50px;
+}
+
+.programs-carousel .swiper-button-next,
+.programs-carousel .swiper-button-prev {
+  color: #4f46e5;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.programs-carousel .swiper-button-next:after,
+.programs-carousel .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.programs-carousel .swiper-pagination-bullet {
+  background: #4f46e5;
+  opacity: 0.5;
+}
+
+.programs-carousel .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #6366f1;
+}
+
+.programs-carousel .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.programs-carousel .program-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
