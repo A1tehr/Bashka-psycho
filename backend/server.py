@@ -380,6 +380,17 @@ async def update_blog_post(
     await db.blog_posts.replace_one({"id": post_id}, updated_post.dict())
     return updated_post
 
+# Protected - only admin can delete blog posts
+@api_router.delete("/blog/{post_id}")
+async def delete_blog_post(
+    post_id: str,
+    current_admin: dict = Depends(get_current_admin)
+):
+    result = await db.blog_posts.delete_one({"id": post_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Blog post not found")
+    return {"message": "Blog post deleted successfully"}
+
 # Site Settings endpoints
 @api_router.get("/settings", response_model=SiteSettings)
 async def get_settings():
