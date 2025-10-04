@@ -256,7 +256,7 @@ const HomePage = () => {
       </section>
 
       {/* Programs Section */}
-      <section className="section-padding" data-testid="programs-section">
+      <section className="section-padding scroll-reveal" data-testid="programs-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Наши программы</h2>
@@ -275,7 +275,7 @@ const HomePage = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {programs.map((program) => (
-                <div key={program.id} className="scroll-reveal program-card bg-white rounded-2xl shadow-lg overflow-hidden group">
+                <div key={program.id} className="program-card bg-white rounded-2xl shadow-lg overflow-hidden group">
                   <div className="h-48 overflow-hidden relative">
                     <img 
                       src={program.image_url} 
