@@ -16,6 +16,13 @@ import AppointmentPage from './pages/AppointmentPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AdminLogin from './pages/admin/AdminLogin';
 import Dashboard from './pages/admin/Dashboard';
+import AppointmentsManagement from './pages/admin/AppointmentsManagement';
+import ContactsManagement from './pages/admin/ContactsManagement';
+import NewsletterManagement from './pages/admin/NewsletterManagement';
+import ProgramsManagement from './pages/admin/ProgramsManagement';
+import BlogManagement from './pages/admin/BlogManagement';
+import SiteSettings from './pages/admin/SiteSettings';
+import PrivacyEditor from './pages/admin/PrivacyEditor';
 import './App.css';
 
 function App() {
