@@ -566,7 +566,7 @@ async def initialize_data():
                     {"question": "Какие инструменты изучаются?", "answer": "Изучаются различные методики планирования, техники тайм-менеджмента и целеполагания."},
                     {"question": "Нужна ли предварительная подготовка?", "answer": "Никакой специальной подготовки не требуется, программа построена от простого к сложному."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1648143714234-810e3ce38cc6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc1ODk3NjUwOHww&ixlib=rb-4.1.0&q=85"
+                "image_url": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop"
             }
         ]
         
@@ -606,7 +606,7 @@ async def initialize_data():
                 "content": "Подростковый возраст — время больших изменений и новых задач. Учеба становится сложнее, появляются дополнительные обязанности, хобби и социальная жизнь. Умение эффективно планировать время становится критически важным навыком. Мы учим подростков техникам планирования, постановки целей и приоритизации задач, которые помогут им не только в школе, но и во взрослой жизни.",
                 "author": "Психолог-консультант",
                 "tags": ["тайм-менеджмент", "подростки", "планирование"],
-                "image_url": "https://images.unsplash.com/photo-1648143714234-810e3ce38cc6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc1ODk3NjUwOHww&ixlib=rb-4.1.0&q=85",
+                "image_url": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop",
                 "published": True
             },
             {
