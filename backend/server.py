@@ -482,7 +482,7 @@ async def initialize_data():
                     {"question": "Как часто проходят занятия?", "answer": "Рекомендуется 1-2 раза в неделю в зависимости от потребностей ребенка."},
                     {"question": "Видны ли результаты сразу?", "answer": "Первые положительные изменения обычно заметны через 4-6 занятий."}
                 ],
-                "image_url": "https://images.pexels.com/photos/34056489/pexels-photo-34056489.jpeg"
+                "image_url": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop"
             },
             {
                 "type": "individual_child",
