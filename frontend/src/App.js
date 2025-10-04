@@ -91,6 +91,13 @@ function App() {
                   <AdminLayout>
                     <Routes>
                       <Route path="/" element={<Dashboard />} />
+                      <Route path="/appointments" element={<AppointmentsManagement />} />
+                      <Route path="/contacts" element={<ContactsManagement />} />
+                      <Route path="/newsletter" element={<NewsletterManagement />} />
+                      <Route path="/programs" element={<ProgramsManagement />} />
+                      <Route path="/blog" element={<BlogManagement />} />
+                      <Route path="/settings" element={<SiteSettings />} />
+                      <Route path="/privacy" element={<PrivacyEditor />} />
                     </Routes>
                   </AdminLayout>
                 </ProtectedRoute>
