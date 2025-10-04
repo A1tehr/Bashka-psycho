@@ -273,58 +273,85 @@ const HomePage = () => {
             <div className="flex justify-center">
               <div className="loading-spinner" />
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {programs.map((program) => (
-                <div key={program.id} className="scroll-reveal program-card bg-white rounded-2xl shadow-lg overflow-hidden group">
-                  <div className="h-48 overflow-hidden relative">
-                    <img 
-                      src={program.image_url} 
-                      alt={program.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">
-                        {program.age_range}
-                      </span>
-                      <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                        {program.price} ₽
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
-                      {program.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
-                      {program.description}
-                    </p>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm text-gray-500 flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {program.duration}
-                      </span>
-                    </div>
-                    <div className="flex gap-2 pt-4 border-t border-gray-100">
-                      <Link
-                        to={`/programs/${program.id}`}
-                        className="flex-1 text-center px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
-                        data-testid={`program-link-${program.id}`}
-                      >
-                        Подробнее
-                      </Link>
-                      <button
-                        onClick={() => openAppointmentModal(program.id)}
-                        className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all"
-                      >
-                        Записаться
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+          ) : programs.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-600">Программы временно недоступны</p>
             </div>
+          ) : (
+            <>
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
+                className="programs-carousel mb-12"
+              >
+                {programs.map((program) => (
+                  <SwiperSlide key={program.id}>
+                    <div className="scroll-reveal program-card bg-white rounded-2xl shadow-lg overflow-hidden group h-full">
+                      <div className="h-48 overflow-hidden relative">
+                        <img 
+                          src={program.image_url} 
+                          alt={program.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                            {program.age_range}
+                          </span>
+                          <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                            {program.price} ₽
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                          {program.title}
+                        </h3>
+                        <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                          {program.description}
+                        </p>
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-sm text-gray-500 flex items-center">
+                            <Clock className="w-4 h-4 mr-1" />
+                            {program.duration}
+                          </span>
+                        </div>
+                        <div className="flex gap-2 pt-4 border-t border-gray-100">
+                          <Link
+                            to={`/programs/${program.id}`}
+                            className="flex-1 text-center px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
+                            data-testid={`program-link-${program.id}`}
+                          >
+                            Подробнее
+                          </Link>
+                          <button
+                            onClick={() => openAppointmentModal(program.id)}
+                            className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all"
+                          >
+                            Записаться
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </>
           )}
           <div className="text-center scroll-reveal">
             <Link
