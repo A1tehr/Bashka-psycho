@@ -503,7 +503,7 @@ async def initialize_data():
                     {"question": "Сколько консультаций потребуется?", "answer": "Количество встреч определяется индивидуально, обычно от 5 до 15 сессий."},
                     {"question": "Участвуют ли родители в процессе?", "answer": "Да, родители получают рекомендации и участвуют в некоторых сессиях."}
                 ],
-                "image_url": "https://images.pexels.com/photos/7579302/pexels-photo-7579302.jpeg"
+                "image_url": "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=800&auto=format&fit=crop"
             },
             {
                 "type": "individual_adult",
