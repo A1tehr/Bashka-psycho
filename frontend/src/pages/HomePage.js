@@ -45,7 +45,7 @@ const HomePage = () => {
   const fetchPrograms = async () => {
     try {
       const response = await axios.get(`${API}/programs`);
-      setPrograms(response.data.slice(0, 3)); // Show first 3 programs
+      setPrograms(response.data); // Show all programs in carousel
       setLoading(false);
     } catch (error) {
       console.error('Error fetching programs:', error);
