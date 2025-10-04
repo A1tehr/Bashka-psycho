@@ -461,7 +461,7 @@ async def initialize_data():
                     {"question": "Нужны ли дополнительные материалы?", "answer": "Все необходимые материалы предоставляются центром."},
                     {"question": "Что включает в себя занятие?", "answer": "Развитие речи, математические представления, подготовка руки к письму, творческие задания."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1600880291319-1a7499c191e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxjaGlsZHJlbiUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc1ODk3NjUwOHww&ixlib=rb-4.1.0&q=85"
+                "image_url": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop"
             },
             {
                 "type": "early_development",
@@ -586,7 +586,7 @@ async def initialize_data():
                 "content": "Подготовка к школе — это не только обучение чтению, письму и счету. Психологическая готовность играет не менее важную роль в успешной адаптации ребенка к школьной жизни. Это включает в себя эмоциональную зрелость, способность концентрировать внимание, социальные навыки и мотивацию к обучению. В нашем центре мы работаем над всеми аспектами школьной готовности, помогая детям чувствовать себя уверенно в новой среде.",
                 "author": "Детский психолог центра",
                 "tags": ["дошкольная подготовка", "психология", "развитие детей"],
-                "image_url": "https://images.unsplash.com/photo-1600880291319-1a7499c191e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxjaGlsZHJlbiUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc1ODk3NjUwOHww&ixlib=rb-4.1.0&q=85",
+                "image_url": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop",
                 "published": True
             },
             {
