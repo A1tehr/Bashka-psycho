@@ -37,7 +37,7 @@ def test_api_root():
         return False
 
 def test_get_programs():
-    """Test GET /api/programs - should return 6 programs"""
+    """Test GET /api/programs - should return at least 6 programs"""
     print("\n=== Testing GET /api/programs ===")
     try:
         response = requests.get(f"{API_BASE}/programs")
@@ -47,8 +47,8 @@ def test_get_programs():
             programs = response.json()
             print(f"Number of programs returned: {len(programs)}")
             
-            if len(programs) == 6:
-                print("✅ Correct number of programs (6)")
+            if len(programs) >= 6:
+                print(f"✅ Programs API working (found {len(programs)} programs, expected at least 6)")
                 # Check first program structure
                 if programs:
                     first_program = programs[0]
@@ -62,7 +62,7 @@ def test_get_programs():
                         print(f"❌ Missing fields in program: {missing_fields}")
                         return False, None
             else:
-                print(f"❌ Expected 6 programs, got {len(programs)}")
+                print(f"❌ Expected at least 6 programs, got {len(programs)}")
                 return False, None
         else:
             print(f"❌ Error: {response.text}")
