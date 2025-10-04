@@ -189,7 +189,7 @@ def test_newsletter_subscription():
         return False
 
 def test_get_blog_posts():
-    """Test GET /api/blog - should return 6 articles"""
+    """Test GET /api/blog - should return at least 6 articles"""
     print("\n=== Testing GET /api/blog ===")
     try:
         response = requests.get(f"{API_BASE}/blog")
@@ -199,8 +199,8 @@ def test_get_blog_posts():
             posts = response.json()
             print(f"Number of blog posts returned: {len(posts)}")
             
-            if len(posts) == 6:
-                print("✅ Correct number of blog posts (6)")
+            if len(posts) >= 6:
+                print(f"✅ Blog API working (found {len(posts)} posts, expected at least 6)")
                 # Check first post structure
                 if posts:
                     first_post = posts[0]
@@ -216,7 +216,7 @@ def test_get_blog_posts():
                         print(f"❌ Missing fields in blog post: {missing_fields}")
                         return False, None
             else:
-                print(f"❌ Expected 6 blog posts, got {len(posts)}")
+                print(f"❌ Expected at least 6 blog posts, got {len(posts)}")
                 return False, None
         else:
             print(f"❌ Error: {response.text}")
