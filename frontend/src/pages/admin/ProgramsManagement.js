@@ -60,19 +60,32 @@ const ProgramsManagement = () => {
   };
 
   const handleEdit = (program) => {
+    // Safely handle goals array
+    const goalsText = Array.isArray(program.goals) 
+      ? program.goals.join('\n') 
+      : '';
+    
+    // Safely handle FAQ array
+    const faqText = Array.isArray(program.faq) && program.faq.length > 0
+      ? JSON.stringify(program.faq, null, 2)
+      : '[]';
+    
     setFormData({
       type: program.type,
       title: program.title,
       description: program.description,
-      goals: program.goals.join('\n'),
+      goals: goalsText,
       age_range: program.age_range,
       price: program.price.toString(),
       duration: program.duration,
-      faq: JSON.stringify(program.faq, null, 2),
-      image_url: program.image_url,
+      faq: faqText,
+      image_url: program.image_url || '',
     });
     setEditingProgram(program);
     setShowForm(true);
+    
+    // Scroll to form
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleDelete = async (programId) => {
