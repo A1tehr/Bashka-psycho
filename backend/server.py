@@ -461,7 +461,7 @@ async def initialize_data():
                     {"question": "Нужны ли дополнительные материалы?", "answer": "Все необходимые материалы предоставляются центром."},
                     {"question": "Что включает в себя занятие?", "answer": "Развитие речи, математические представления, подготовка руки к письму, творческие задания."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop"
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg"
             },
             {
                 "type": "early_development",
@@ -482,7 +482,7 @@ async def initialize_data():
                     {"question": "Как часто проходят занятия?", "answer": "Рекомендуется 1-2 раза в неделю в зависимости от потребностей ребенка."},
                     {"question": "Видны ли результаты сразу?", "answer": "Первые положительные изменения обычно заметны через 4-6 занятий."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop"
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg"
             },
             {
                 "type": "individual_child",
@@ -503,7 +503,7 @@ async def initialize_data():
                     {"question": "Сколько консультаций потребуется?", "answer": "Количество встреч определяется индивидуально, обычно от 5 до 15 сессий."},
                     {"question": "Участвуют ли родители в процессе?", "answer": "Да, родители получают рекомендации и участвуют в некоторых сессиях."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=800&auto=format&fit=crop"
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg"
             },
             {
                 "type": "individual_adult",
@@ -524,7 +524,7 @@ async def initialize_data():
                     {"question": "Можно ли проводить консультации онлайн?", "answer": "Да, возможны как очные, так и онлайн консультации."},
                     {"question": "Что происходит на первой встрече?", "answer": "Знакомство, обсуждение запроса, постановка целей и планирование дальнейшей работы."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop"
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg"
             },
             {
                 "type": "group_child",
@@ -545,7 +545,7 @@ async def initialize_data():
                     {"question": "Как формируются группы?", "answer": "Группы комплектуются с учетом возраста, уровня развития и совместимости детей."},
                     {"question": "Что если ребенок стесняется?", "answer": "Наши специалисты помогают застенчивым детям постепенно включиться в групповую работу."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop"
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg"
             },
             {
                 "type": "goal_setting",
@@ -566,7 +566,7 @@ async def initialize_data():
                     {"question": "Какие инструменты изучаются?", "answer": "Изучаются различные методики планирования, техники тайм-менеджмента и целеполагания."},
                     {"question": "Нужна ли предварительная подготовка?", "answer": "Никакой специальной подготовки не требуется, программа построена от простого к сложному."}
                 ],
-                "image_url": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop"
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg"
             }
         ]
         
@@ -586,7 +586,7 @@ async def initialize_data():
                 "content": "Подготовка к школе — это не только обучение чтению, письму и счету. Психологическая готовность играет не менее важную роль в успешной адаптации ребенка к школьной жизни. Это включает в себя эмоциональную зрелость, способность концентрировать внимание, социальные навыки и мотивацию к обучению. В нашем центре мы работаем над всеми аспектами школьной готовности, помогая детям чувствовать себя уверенно в новой среде.",
                 "author": "Детский психолог центра",
                 "tags": ["дошкольная подготовка", "психология", "развитие детей"],
-                "image_url": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop",
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg",
                 "published": True
             },
             {
@@ -596,7 +596,7 @@ async def initialize_data():
                 "content": "Эмоциональный интеллект — это способность понимать и управлять своими эмоциями, а также эффективно взаимодействовать с окружающими. Дети с развитым эмоциональным интеллектом лучше справляются со стрессом, имеют более качественные отношения с друзьями и взрослыми, показывают лучшие результаты в учебе. Развитие эмоционального интеллекта начинается с раннего возраста и продолжается всю жизнь.",
                 "author": "Семейный психолог",
                 "tags": ["эмоциональный интеллект", "воспитание", "психология детей"],
-                "image_url": "https://images.unsplash.com/photo-1537714196752-3f0bc4eb98d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxwc3ljaG9sb2d5JTIwZGV2ZWxvcG1lbnR8ZW58MHx8fGJsdWV8MTc1OTE1MDQ0NHww&ixlib=rb-4.1.0&q=85",
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg",
                 "published": True
             },
             {
@@ -606,7 +606,7 @@ async def initialize_data():
                 "content": "Подростковый возраст — время больших изменений и новых задач. Учеба становится сложнее, появляются дополнительные обязанности, хобби и социальная жизнь. Умение эффективно планировать время становится критически важным навыком. Мы учим подростков техникам планирования, постановки целей и приоритизации задач, которые помогут им не только в школе, но и во взрослой жизни.",
                 "author": "Психолог-консультант",
                 "tags": ["тайм-менеджмент", "подростки", "планирование"],
-                "image_url": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop",
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg",
                 "published": True
             },
             {
@@ -616,7 +616,7 @@ async def initialize_data():
                 "content": "Тревожность может значительно снижать качество жизни, влиять на работоспособность и отношения с близкими. Важно понимать, что тревога — это нормальная реакция организма на стресс, но когда она становится чрезмерной, необходима помощь специалиста. Современная психология предлагает множество эффективных методов работы с тревожностью: когнитивно-поведенческая терапия, техники релаксации, mindfulness-практики.",
                 "author": "Клинический психолог",
                 "tags": ["тревожность", "взрослые", "стресс", "терапия"],
-                "image_url": "https://images.unsplash.com/photo-1699091871413-afdf712fd616?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHx0aGVyYXB5JTIwY2hpbGRyZW58ZW58MHx8fGJsdWV8MTc1OTE1MDQ1MHww&ixlib=rb-4.1.0&q=85",
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg",
                 "published": True
             },
             {
@@ -626,7 +626,7 @@ async def initialize_data():
                 "content": "В современном мире дети часто проводят много времени за экранами и меньше взаимодействуют с ровесниками. Групповые занятия в психологическом центре предоставляют безопасную среду для развития социальных навыков. Дети учатся работать в команде, разрешать конфликты, выражать свои мысли и чувства, развивают эмпатию и лидерские качества. Эти навыки критически важны для успешной социальной адаптации.",
                 "author": "Детский психолог",
                 "tags": ["групповые занятия", "социальные навыки", "дети", "развитие"],
-                "image_url": "https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg",
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg",
                 "published": True
             },
             {
@@ -636,7 +636,7 @@ async def initialize_data():
                 "content": "Каждый ребенок уникален и имеет свой темп развития. Некоторые дети легко усваивают новый материал, другим требуется больше времени и поддержки. Важно помнить, что учебные трудности не означают низкий интеллект. Часто проблемы связаны с особенностями внимания, памяти, мотивации или эмоциональным состоянием. Индивидуальный подход и профессиональная поддержка помогают каждому ребенку раскрыть свой потенциал.",
                 "author": "Педагог-психолог",
                 "tags": ["учебные трудности", "дети", "обучение", "поддержка"],
-                "image_url": "https://images.pexels.com/photos/6075006/pexels-photo-6075006.jpeg",
+                "image_url": "https://s.iimg.su/s/04/g7XnPpcxobNY3y2adDgZiH9Cs4gXmYjPu61boa41.jpg",
                 "published": True
             }
         ]
