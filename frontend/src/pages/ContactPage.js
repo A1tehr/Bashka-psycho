@@ -41,7 +41,8 @@ const ContactPage = () => {
           email: '',
           phone: '',
           subject: '',
-          message: ''
+          message: '',
+          privacy_accepted: false
         });
       }, 3000);
       
