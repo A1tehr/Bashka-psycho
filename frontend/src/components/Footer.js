@@ -31,15 +31,6 @@ const Footer = () => {
               >
                 <span className="text-sm font-bold">ВК</span>
               </a>
-              <a
-                href="https://instagram.com/psycenter_vrn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors"
-                data-testid="instagram-link"
-              >
-                <span className="text-sm font-bold">IG</span>
-              </a>
             </div>
           </div>
 
