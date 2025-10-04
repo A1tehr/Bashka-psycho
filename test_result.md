@@ -171,6 +171,21 @@ backend:
         agent: "testing"
         comment: "✅ Протестировано: GET /api/blog возвращает 6 статей, GET /api/blog/{slug} работает корректно. Была найдена и исправлена проблема с инициализацией - изначально в БД было только 3 статьи из 6, добавлены недостающие 3 статьи. Все API блога работают правильно."
 
+  - task: "Админ-панель с JWT авторизацией"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Реализована полная админ-панель с JWT авторизацией, защищенными эндпоинтами, управлением записями, контактами, рассылкой, программами и блогом"
+      - working: true
+        agent: "testing"
+        comment: "✅ СПЕЦИАЛЬНОЕ ТЕСТИРОВАНИЕ ЗАВЕРШЕНО: Протестированы все 8 запрошенных API эндпоинтов психологического центра. GET /api/programs возвращает 6 программ с Unsplash изображениями ✅, GET /api/blog возвращает 6 блог-постов ✅, POST /api/admin/login с логином 'test'/'test' работает ✅, GET /api/settings возвращает настройки ✅, PUT /api/programs/{id} обновляет программы ✅, DELETE /api/programs/{id} требует авторизацию ✅, PUT /api/blog/{id} обновляет посты ✅, DELETE /api/blog/{id} требует авторизацию ✅. Все тесты прошли успешно (8/8 - 100%)."
+
 frontend:
   - task: "Современная главная страница с параллакс-эффектами"
     implemented: true
