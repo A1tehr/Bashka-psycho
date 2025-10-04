@@ -27,7 +27,8 @@ const AppointmentPage = () => {
     child_age: '',
     preferred_date: '',
     preferred_time: '',
-    message: ''
+    message: '',
+    privacy_accepted: false
   });
 
   useEffect(() => {
