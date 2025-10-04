@@ -286,6 +286,29 @@ const ContactPage = () => {
                     />
                   </div>
 
+                  {/* Privacy Policy Checkbox */}
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      name="privacy_accepted"
+                      checked={formData.privacy_accepted}
+                      onChange={(e) => setFormData(prev => ({ ...prev, privacy_accepted: e.target.checked }))}
+                      required
+                      className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                    />
+                    <label className="ml-3 text-sm text-gray-700">
+                      Я ознакомился(лась) с{' '}
+                      <Link 
+                        to="/privacy" 
+                        target="_blank"
+                        className="text-indigo-600 hover:text-indigo-800 underline"
+                      >
+                        политикой конфиденциальности
+                      </Link>
+                      {' '}и согласен(на) на обработку персональных данных *
+                    </label>
+                  </div>
+
                   <button
                     type="submit"
                     disabled={submitting}
