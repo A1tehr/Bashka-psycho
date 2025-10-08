@@ -128,57 +128,35 @@ const HomePage = () => {
         <MessageCircle className="w-8 h-8" style={{ marginTop: '16px', marginLeft: '16px' }} />
       </a>
 
-      {/* Hero Section with Modern Parallax Design */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" data-testid="hero-section">
-        {/* Animated Background Layers */}
+      {/* Hero Section - Light and Warm Design */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream-50 via-peach-50 to-soft-blue-50" data-testid="hero-section">
+        {/* Soft Background Elements */}
         <div className="absolute inset-0">
-          {/* Back layer with gradient */}
-          <div 
-            className="absolute inset-0 parallax-back"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1707130868349-3ed75fc7fe8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxncmFkaWVudCUyMGFic3RyYWN0fGVufDB8fHxibHVlfDE3NTkxNTA0NTN8MA&ixlib=rb-4.1.0&q=85)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.7
-            }}
-          />
+          {/* Soft gradient overlay */}
+          <div className="absolute inset-0 light-hero-gradient" />
           
-          {/* Middle layer with nature */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1561765781-f7de2b8c56a5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxuYXR1cmUlMjBjYWxtfGVufDB8fHxibHVlfDE3NTkxNTA0NTl8MA&ixlib=rb-4.1.0&q=85)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.3,
-              backgroundAttachment: 'fixed'
-            }}
-          />
-          
-          {/* Overlay with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-800/50 to-purple-900/60" />
-          
-          {/* Floating geometric shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
-          <div className="absolute bottom-40 right-32 w-48 h-48 bg-purple-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/3 right-20 w-24 h-24 bg-indigo-400/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
+          {/* Soft floating shapes with warm colors */}
+          <div className="absolute top-20 left-20 w-64 h-64 bg-peach-200/30 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-32 right-24 w-80 h-80 bg-soft-blue-200/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/3 right-32 w-48 h-48 bg-orange-200/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute bottom-1/4 left-1/4 w-56 h-56 bg-cream-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 scroll-reveal">
-            <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-blue-100 font-medium mb-6">
+            <div className="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-orange-600 font-medium mb-6 shadow-sm border border-orange-100">
               ✨ Профессиональное развитие с заботой
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900">
               Психологический центр
-              <span className="block bg-gradient-to-r from-blue-200 via-purple-200 to-indigo-200 bg-clip-text text-transparent mt-2">
+              <span className="block bg-gradient-to-r from-orange-500 via-peach-500 to-orange-600 bg-clip-text text-transparent mt-2">
                 развития личности
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl mb-12 text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Помогаем детям и взрослым раскрыть свой потенциал через современные методы психологического развития и индивидуальный подход
             </p>
           </div>
@@ -186,29 +164,29 @@ const HomePage = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center scroll-reveal">
             <button
               onClick={() => openAppointmentModal()}
-              className="group bg-white text-indigo-900 px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl btn-hover btn-pulse flex items-center"
+              className="group btn-orange text-white px-12 py-5 rounded-full text-lg font-semibold flex items-center shadow-lg"
               data-testid="hero-appointment-btn"
             >
               Записаться на консультацию
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </button>
             
             <Link
               to="/programs"
-              className="group border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all transform hover:scale-105 flex items-center"
+              className="group border-2 border-orange-400 text-orange-600 bg-white/80 backdrop-blur-sm px-12 py-5 rounded-full text-lg font-semibold hover:bg-orange-50 transition-all transform hover:scale-105 flex items-center shadow-lg"
               data-testid="hero-programs-btn"
             >
               Наши программы
-              <ArrowRight className="ml-3 h-5 w-5 opacity-70 group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-all" />
             </Link>
           </div>
 
           {/* Quick Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 scroll-reveal">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 scroll-reveal">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
+              <div key={index} className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
+                <div className="text-3xl md:text-5xl font-bold text-orange-600 mb-2">{stat.number}</div>
+                <div className="text-gray-700 text-sm md:text-base font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
