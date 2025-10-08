@@ -222,17 +222,17 @@ const HomePage = () => {
       {/* Stats Section - Removed duplicate, using only hero stats */}
 
       {/* Programs Section */}
-      <section className="section-padding scroll-reveal" data-testid="programs-section">
+      <section className="section-padding scroll-reveal bg-gradient-to-br from-cream-50 to-peach-50/30" data-testid="programs-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Наши программы</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Наши программы</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Профессиональные программы развития для всех возрастов
             </p>
           </div>
           {loading ? (
             <div className="flex justify-center">
-              <div className="loading-spinner" />
+              <div className="loading-spinner" style={{ borderTopColor: '#ff7730' }} />
             </div>
           ) : programs.length === 0 ? (
             <div className="text-center py-12">
@@ -241,25 +241,25 @@ const HomePage = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {programs.map((program) => (
-                <div key={program.id} className="program-card bg-white rounded-2xl shadow-lg overflow-hidden group">
-                  <div className="h-48 overflow-hidden relative">
+                <div key={program.id} className="program-card bg-white rounded-soft-lg soft-shadow-lg overflow-hidden group">
+                  <div className="h-56 overflow-hidden relative">
                     <img 
                       src={program.image_url} 
                       alt={program.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-orange-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                      <span className="bg-gradient-to-r from-peach-100 to-orange-100 text-orange-700 text-sm font-semibold px-4 py-2 rounded-full border border-orange-200">
                         {program.age_range}
                       </span>
-                      <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      <span className="text-2xl font-bold text-orange-600">
                         {program.price} ₽
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
                       {program.title}
                     </h3>
                     <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
@@ -267,21 +267,21 @@ const HomePage = () => {
                     </p>
                     <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
                       <span className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
+                        <Clock className="w-4 h-4 mr-1 text-orange-500" />
                         {program.duration}
                       </span>
                     </div>
-                    <div className="flex gap-2 pt-4 border-t border-gray-100">
+                    <div className="flex gap-3 pt-4 border-t border-gray-100">
                       <Link
                         to={`/programs/${program.id}`}
-                        className="flex-1 text-center px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
+                        className="flex-1 text-center px-4 py-3 border-2 border-orange-400 text-orange-600 rounded-xl font-semibold hover:bg-orange-50 transition-all"
                         data-testid={`program-link-${program.id}`}
                       >
                         Подробнее
                       </Link>
                       <button
                         onClick={() => openAppointmentModal(program.id)}
-                        className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all"
+                        className="flex-1 text-center px-4 py-3 btn-orange text-white rounded-xl font-semibold shadow-md"
                       >
                         Записаться
                       </button>
@@ -294,11 +294,11 @@ const HomePage = () => {
           <div className="text-center scroll-reveal">
             <Link
               to="/programs"
-              className="bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-indigo-700 transition-colors btn-hover"
+              className="inline-flex items-center btn-orange text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg"
               data-testid="view-all-programs-btn"
             >
               Все программы
-              <ArrowRight className="inline-block ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
