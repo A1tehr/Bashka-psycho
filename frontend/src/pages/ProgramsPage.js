@@ -84,29 +84,34 @@ const ProgramsPage = () => {
   return (
     <div className="programs-page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <section className="warm-gradient py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6" data-testid="programs-title">
+          <div className="flex justify-center gap-3 mb-6">
+            <span className="text-5xl">📚</span>
+            <span className="text-5xl">🎯</span>
+            <span className="text-5xl">✨</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900" data-testid="programs-title">
             Наши программы развития
           </h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Выберите программу, которая поможет вам или вашему ребенку раскрыть потенциал и достичь новых высот
           </p>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-white border-b border-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-4 justify-center">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
+                className={`px-6 py-3 rounded-full text-sm font-semibold transition-all transform hover:scale-105 ${
                   selectedCategory === category.id
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'btn-orange text-white shadow-md'
+                    : 'bg-cream-100 text-gray-700 hover:bg-cream-200'
                 }`}
                 data-testid={`filter-${category.id}`}
               >
