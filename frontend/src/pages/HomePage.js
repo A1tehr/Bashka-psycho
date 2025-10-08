@@ -328,6 +328,11 @@ const HomePage = () => {
       <section className="section-padding bg-white" data-testid="testimonials-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
+            <div className="flex justify-center gap-3 mb-6">
+              <span className="text-4xl">💬</span>
+              <span className="text-4xl">⭐</span>
+              <span className="text-4xl">👨‍👩‍👧‍👦</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Отзывы наших клиентов</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Мы гордимся доверием наших клиентов и их успехами
