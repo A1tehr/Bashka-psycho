@@ -291,15 +291,18 @@ html {
   transition: transform 0.3s ease;
 }
 
-/* Testimonial styles */
+/* Testimonial styles - light and warm */
 .testimonial-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #fff5f0 0%, #ffe8db 100%);
+  border: 2px solid #ffd4b8;
   transform: perspective(1000px) rotateY(0deg);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  color: #333;
 }
 
 .testimonial-card:hover {
-  transform: perspective(1000px) rotateY(5deg);
+  transform: perspective(1000px) rotateY(2deg) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(248, 94, 17, 0.15);
 }
 
 /* FAQ accordion animation */
