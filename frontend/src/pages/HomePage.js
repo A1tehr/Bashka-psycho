@@ -129,11 +129,16 @@ const HomePage = () => {
       </a>
 
       {/* Hero Section - Light and Warm Design */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream-50 via-peach-50 to-soft-blue-50" data-testid="hero-section">
-        {/* Soft Background Elements */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" data-testid="hero-section">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          {/* Soft gradient overlay */}
-          <div className="absolute inset-0 light-hero-gradient" />
+          <img 
+            src="https://images.unsplash.com/photo-1588979355313-6711a095465f" 
+            alt="Happy family"
+            className="w-full h-full object-cover"
+          />
+          {/* Light overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-peach-50/90 to-orange-50/85" />
           
           {/* Soft floating shapes with warm colors */}
           <div className="absolute top-20 left-20 w-64 h-64 bg-peach-200/30 rounded-full blur-3xl animate-pulse" />
