@@ -89,68 +89,68 @@ const ContactPage = () => {
               {/* Contact Cards */}
               <div className="space-y-4">
                 {/* Phone */}
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 card-hover">
+                <div className="bg-white p-6 rounded-soft soft-shadow-lg border border-orange-100 gentle-hover">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-indigo-600" />
+                    <div className="w-14 h-14 peach-gradient rounded-full flex items-center justify-center shadow-md">
+                      <Phone className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900">Телефон</h3>
+                      <h3 className="text-lg font-bold text-gray-900">Телефон</h3>
                       <a 
                         href="tel:+79038509090" 
-                        className="text-indigo-600 hover:text-indigo-800 transition-colors font-medium"
+                        className="text-orange-600 hover:text-orange-700 transition-colors font-semibold text-lg"
                         data-testid="phone-link"
                       >
                         +7 (903) 850-90-90
                       </a>
-                      <p className="text-sm text-gray-500 mt-1">Звоните с 9:00 до 20:00</p>
+                      <p className="text-sm text-gray-600 mt-1">Звоните с 9:00 до 20:00</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 card-hover">
+                <div className="bg-white p-6 rounded-soft soft-shadow-lg border border-orange-100 gentle-hover">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-green-600" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-soft-blue-500 to-soft-blue-600 rounded-full flex items-center justify-center shadow-md">
+                      <Mail className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900">Email</h3>
+                      <h3 className="text-lg font-bold text-gray-900">Email</h3>
                       <a 
                         href="mailto:info@psycenter-vrn.ru" 
-                        className="text-green-600 hover:text-green-800 transition-colors font-medium"
+                        className="text-soft-blue-600 hover:text-soft-blue-700 transition-colors font-semibold text-lg"
                         data-testid="email-link"
                       >
                         info@psycenter-vrn.ru
                       </a>
-                      <p className="text-sm text-gray-500 mt-1">Отвечаем в течение 2 часов</p>
+                      <p className="text-sm text-gray-600 mt-1">Отвечаем в течение 2 часов</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Location */}
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 card-hover">
+                <div className="bg-white p-6 rounded-soft soft-shadow-lg border border-orange-100 gentle-hover">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-purple-600" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-cream-500 to-cream-600 rounded-full flex items-center justify-center shadow-md">
+                      <MapPin className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900">Адрес</h3>
-                      <p className="text-purple-600 font-medium">г. Воронеж</p>
-                      <p className="text-sm text-gray-500 mt-1">Точный адрес уточняется при записи</p>
+                      <h3 className="text-lg font-bold text-gray-900">Адрес</h3>
+                      <p className="text-cream-700 font-semibold text-lg">г. Воронеж</p>
+                      <p className="text-sm text-gray-600 mt-1">Точный адрес уточняется при записи</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Working Hours */}
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 card-hover">
+                <div className="bg-white p-6 rounded-soft soft-shadow-lg border border-orange-100 gentle-hover">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-orange-600" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center shadow-md">
+                      <Clock className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900">Режим работы</h3>
-                      <div className="text-orange-600 font-medium">
+                      <h3 className="text-lg font-bold text-gray-900">Режим работы</h3>
+                      <div className="text-orange-600 font-semibold text-lg">
                         <p>Пн-Пт: 9:00-20:00</p>
                         <p>Сб-Вс: 10:00-18:00</p>
                       </div>
