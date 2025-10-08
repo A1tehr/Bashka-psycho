@@ -473,17 +473,17 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="scroll-reveal bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-12 text-white">
-            <h2 className="text-4xl font-bold mb-4">Готовы начать путь развития?</h2>
-            <p className="text-xl text-indigo-100 mb-8">
+          <div className="scroll-reveal peach-gradient rounded-soft-lg p-12 md:p-16 shadow-xl">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Готовы начать путь развития?</h2>
+            <p className="text-xl md:text-2xl text-orange-50 mb-10 leading-relaxed">
               Свяжитесь с нами сегодня и сделайте первый шаг к позитивным изменениям
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => openAppointmentModal()}
-                className="bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 btn-hover"
+                className="bg-white text-orange-600 px-10 py-5 rounded-full text-lg font-bold hover:bg-orange-50 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
                 data-testid="cta-appointment-btn"
               >
                 Записаться на консультацию
