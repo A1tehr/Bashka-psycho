@@ -236,18 +236,18 @@ const ProgramsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-12 text-white">
-            <Users className="h-12 w-12 mx-auto mb-6 text-indigo-200" />
-            <h2 className="text-3xl font-bold mb-4">Не можете выбрать подходящую программу?</h2>
-            <p className="text-xl text-indigo-100 mb-8">
+          <div className="peach-gradient rounded-soft-lg p-12 shadow-xl">
+            <Users className="h-16 w-16 mx-auto mb-6 text-white" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Не можете выбрать подходящую программу?</h2>
+            <p className="text-xl text-orange-50 mb-8 leading-relaxed">
               Наши специалисты помогут подобрать идеальную программу для ваших целей
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contacts"
-                className="bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 btn-hover"
+                className="bg-white text-orange-600 px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-50 transition-all transform hover:scale-105 shadow-lg"
                 data-testid="consultation-btn"
               >
                 Получить консультацию
