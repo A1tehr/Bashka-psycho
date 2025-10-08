@@ -490,7 +490,7 @@ const HomePage = () => {
               </button>
               <Link
                 to="/contacts"
-                className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-all transform hover:scale-105"
+                className="border-2 border-white text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-orange-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
                 data-testid="cta-contact-btn"
               >
                 Связаться с нами
