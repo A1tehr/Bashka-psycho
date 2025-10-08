@@ -408,6 +408,96 @@ html {
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+
+/* Light and minimalist design styles */
+.light-hero-gradient {
+  background: linear-gradient(135deg, 
+    rgba(255, 245, 240, 0.95) 0%,
+    rgba(255, 232, 219, 0.9) 50%,
+    rgba(240, 249, 255, 0.95) 100%);
+}
+
+.soft-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.soft-shadow-lg {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.warm-gradient {
+  background: linear-gradient(135deg, #fff5f0 0%, #ffe8db 100%);
+}
+
+.peach-gradient {
+  background: linear-gradient(135deg, #ff7730 0%, #ff9255 100%);
+}
+
+.btn-orange {
+  background: linear-gradient(135deg, #ff7730 0%, #ff9255 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #f85e11 0%, #ff7730 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 119, 48, 0.3);
+}
+
+/* Emotion icons animation */
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.emotion-icon {
+  animation: bounce-soft 3s ease-in-out infinite;
+}
+
+.emotion-icon:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.emotion-icon:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Soft rounded corners */
+.rounded-soft {
+  border-radius: 24px;
+}
+
+.rounded-soft-lg {
+  border-radius: 32px;
+}
+
+/* Trust and warmth colors */
+.bg-trust {
+  background-color: #f0f9ff;
+}
+
+.bg-warmth {
+  background-color: #fff5f0;
+}
+
+.text-warm-gray {
+  color: #6b5b4f;
+}
+
+/* Gentle hover effects */
+.gentle-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gentle-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 119, 48, 0.15);
+}
+
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
