@@ -194,24 +194,24 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Почему выбирают нас</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Почему выбирают нас</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Мы создаем комфортную и профессиональную среду для вашего развития
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="text-center scroll-reveal card-hover bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className="h-8 w-8 text-white" />
+                <div key={index} className="text-center scroll-reveal gentle-hover bg-gradient-to-br from-cream-50 to-peach-50 p-10 rounded-soft-lg border border-orange-100">
+                  <div className="w-20 h-20 peach-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                    <IconComponent className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-gray-700 leading-relaxed text-lg">{feature.description}</p>
                 </div>
               );
             })}
@@ -219,19 +219,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <div key={index} className="scroll-reveal">
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-indigo-200 text-lg">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Stats Section - Removed duplicate, using only hero stats */}
 
       {/* Programs Section */}
       <section className="section-padding scroll-reveal" data-testid="programs-section">
