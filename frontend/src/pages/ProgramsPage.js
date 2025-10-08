@@ -123,24 +123,24 @@ const ProgramsPage = () => {
       </section>
 
       {/* Programs Grid */}
-      <section className="py-16" data-testid="programs-grid">
+      <section className="py-16 bg-gradient-to-br from-cream-50 to-peach-50/30" data-testid="programs-grid">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {loading ? (
             <div className="flex justify-center">
-              <div className="loading-spinner" />
+              <div className="loading-spinner" style={{ borderTopColor: '#ff7730' }} />
             </div>
           ) : (
             <>
               <div className="text-center mb-12">
-                <p className="text-lg text-gray-600">
-                  Найдено программ: <span className="font-semibold text-indigo-600">{filteredPrograms.length}</span>
+                <p className="text-lg text-gray-700">
+                  Найдено программ: <span className="font-bold text-orange-600">{filteredPrograms.length}</span>
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredPrograms.map((program) => (
                   <div 
                     key={program.id} 
-                    className="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100"
+                    className="gentle-hover bg-white rounded-soft-lg soft-shadow-lg overflow-hidden border border-orange-100"
                     data-testid={`program-card-${program.id}`}
                   >
                     <div className="relative h-56 overflow-hidden">
@@ -150,12 +150,12 @@ const ProgramsPage = () => {
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-white bg-opacity-90 text-2xl px-3 py-2 rounded-full">
+                        <span className="bg-white bg-opacity-95 text-2xl px-3 py-2 rounded-full shadow-md">
                           {getProgramIcon(program.type)}
                         </span>
                       </div>
                       <div className="absolute top-4 right-4">
-                        <span className="bg-indigo-600 text-white text-sm font-bold px-3 py-1 rounded-full">
+                        <span className="peach-gradient text-white text-sm font-bold px-4 py-2 rounded-full shadow-md">
                           {program.price} ₽
                         </span>
                       </div>
@@ -163,11 +163,11 @@ const ProgramsPage = () => {
                     
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span className="bg-gradient-to-r from-peach-100 to-orange-100 text-orange-700 text-sm font-semibold px-3 py-1.5 rounded-full border border-orange-200">
                           {program.age_range}
                         </span>
-                        <div className="flex items-center text-sm text-gray-500">
-                          <Clock className="h-4 w-4 mr-1" />
+                        <div className="flex items-center text-sm text-gray-600">
+                          <Clock className="h-4 w-4 mr-1 text-orange-500" />
                           {program.duration}
                         </div>
                       </div>
@@ -183,28 +183,28 @@ const ProgramsPage = () => {
                       {/* Goals preview */}
                       <div className="mb-6">
                         <div className="flex items-center mb-2">
-                          <Target className="h-4 w-4 text-indigo-600 mr-2" />
-                          <span className="text-sm font-medium text-gray-700">Цели программы:</span>
+                          <Target className="h-4 w-4 text-orange-600 mr-2" />
+                          <span className="text-sm font-semibold text-gray-700">Цели программы:</span>
                         </div>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {program.goals.slice(0, 2).map((goal, index) => (
                             <li key={index} className="flex items-start">
-                              <span className="text-indigo-600 mr-2">•</span>
+                              <span className="text-orange-500 mr-2">•</span>
                               {goal}
                             </li>
                           ))}
                           {program.goals.length > 2 && (
-                            <li className="text-indigo-600 text-sm font-medium">
+                            <li className="text-orange-600 text-sm font-semibold">
                               +{program.goals.length - 2} еще...
                             </li>
                           )}
                         </ul>
                       </div>
                       
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col gap-3">
                         <Link
                           to={`/programs/${program.id}`}
-                          className="bg-indigo-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-colors btn-hover flex items-center"
+                          className="btn-orange text-white px-6 py-3 rounded-full text-sm font-semibold text-center flex items-center justify-center shadow-md"
                           data-testid={`program-detail-btn-${program.id}`}
                         >
                           Подробнее
@@ -212,7 +212,7 @@ const ProgramsPage = () => {
                         </Link>
                         <Link
                           to={`/appointment?program=${program.id}`}
-                          className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors text-sm"
+                          className="border-2 border-orange-400 text-orange-600 px-6 py-3 rounded-full text-sm font-semibold text-center hover:bg-orange-50 transition-colors"
                           data-testid={`program-appointment-btn-${program.id}`}
                         >
                           Записаться
