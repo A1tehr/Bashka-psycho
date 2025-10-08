@@ -116,17 +116,17 @@ const BlogPage = () => {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-16" data-testid="blog-posts">
+      <section className="py-16 bg-gradient-to-br from-cream-50 to-peach-50/30" data-testid="blog-posts">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {loading ? (
             <div className="flex justify-center">
-              <div className="loading-spinner" />
+              <div className="loading-spinner" style={{ borderTopColor: '#ff7730' }} />
             </div>
           ) : (
             <>
               <div className="text-center mb-12">
-                <p className="text-lg text-gray-600">
-                  Найдено статей: <span className="font-semibold text-indigo-600">{filteredPosts.length}</span>
+                <p className="text-lg text-gray-700">
+                  Найдено статей: <span className="font-bold text-orange-600">{filteredPosts.length}</span>
                 </p>
               </div>
 
@@ -135,7 +135,7 @@ const BlogPage = () => {
                   {filteredPosts.map((post) => (
                     <article 
                       key={post.id} 
-                      className="blog-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100"
+                      className="blog-card gentle-hover bg-white rounded-soft-lg soft-shadow-lg overflow-hidden border border-orange-100"
                       data-testid={`blog-post-${post.id}`}
                     >
                       <div className="h-48 overflow-hidden">
@@ -147,15 +147,15 @@ const BlogPage = () => {
                       </div>
                       
                       <div className="p-6">
-                        <div className="flex items-center text-sm text-gray-500 mb-3">
-                          <Calendar className="h-4 w-4 mr-1" />
+                        <div className="flex items-center text-sm text-gray-600 mb-3">
+                          <Calendar className="h-4 w-4 mr-1 text-orange-500" />
                           <span>{formatDate(post.created_at)}</span>
                           <span className="mx-2">•</span>
-                          <User className="h-4 w-4 mr-1" />
+                          <User className="h-4 w-4 mr-1 text-orange-500" />
                           <span>{post.author}</span>
                         </div>
                         
-                        <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-indigo-600 transition-colors">
+                        <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-orange-600 transition-colors">
                           <Link to={`/blog/${post.slug}`}>
                             {post.title}
                           </Link>
@@ -170,14 +170,14 @@ const BlogPage = () => {
                           {post.tags.slice(0, 2).map((tag) => (
                             <span 
                               key={tag}
-                              className="inline-flex items-center px-2 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                              className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-peach-100 to-orange-100 text-orange-700 text-xs font-semibold rounded-full border border-orange-200"
                             >
                               <Tag className="h-3 w-3 mr-1" />
                               {tag}
                             </span>
                           ))}
                           {post.tags.length > 2 && (
-                            <span className="text-xs text-gray-500 px-2 py-1">
+                            <span className="text-xs text-gray-600 px-2 py-1">
                               +{post.tags.length - 2} еще
                             </span>
                           )}
@@ -185,7 +185,7 @@ const BlogPage = () => {
                         
                         <Link
                           to={`/blog/${post.slug}`}
-                          className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors"
+                          className="inline-flex items-center text-orange-600 font-bold hover:text-orange-700 transition-colors"
                           data-testid={`read-more-${post.id}`}
                         >
                           Читать полностью
