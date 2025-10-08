@@ -50,30 +50,35 @@ const BlogPage = () => {
   return (
     <div className="blog-page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <section className="warm-gradient py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6" data-testid="blog-title">
+          <div className="flex justify-center gap-3 mb-6">
+            <span className="text-5xl">📝</span>
+            <span className="text-5xl">🧠</span>
+            <span className="text-5xl">💡</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900" data-testid="blog-title">
             Блог о психологии
           </h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Полезные статьи о психологии, развитии детей и взрослых, советы от наших специалистов
           </p>
         </div>
       </section>
 
       {/* Search and Filter Section */}
-      <section className="bg-white py-8 border-b">
+      <section className="bg-white py-8 border-b border-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-orange-400" />
               <input
                 type="text"
                 placeholder="Поиск по статьям..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border-2 border-orange-200 rounded-full focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-all"
                 data-testid="blog-search-input"
               />
             </div>
@@ -82,10 +87,10 @@ const BlogPage = () => {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedTag('')}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all transform hover:scale-105 ${
                   !selectedTag
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'btn-orange text-white shadow-md'
+                    : 'bg-cream-100 text-gray-700 hover:bg-cream-200'
                 }`}
                 data-testid="tag-all"
               >
@@ -95,10 +100,10 @@ const BlogPage = () => {
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all transform hover:scale-105 ${
                     selectedTag === tag
-                      ? 'bg-indigo-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'btn-orange text-white shadow-md'
+                      : 'bg-cream-100 text-gray-700 hover:bg-cream-200'
                   }`}
                   data-testid={`tag-${tag.replace(/\s+/g, '-')}`}
                 >
