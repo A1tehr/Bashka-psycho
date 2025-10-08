@@ -202,6 +202,11 @@ const HomePage = () => {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
+            <div className="flex justify-center gap-4 mb-6">
+              <span className="text-5xl emotion-icon">😊</span>
+              <span className="text-5xl emotion-icon">❤️</span>
+              <span className="text-5xl emotion-icon">🌟</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Почему выбирают нас</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Мы создаем комфортную и профессиональную среду для вашего развития
@@ -211,8 +216,18 @@ const HomePage = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="text-center scroll-reveal gentle-hover bg-gradient-to-br from-cream-50 to-peach-50 p-10 rounded-soft-lg border border-orange-100">
-                  <div className="w-20 h-20 peach-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <div key={index} className="text-center scroll-reveal gentle-hover bg-gradient-to-br from-cream-50 to-peach-50 p-10 rounded-soft-lg border border-orange-100 relative overflow-hidden">
+                  {index === 0 && (
+                    <div className="absolute top-4 right-4 w-24 h-24 opacity-20">
+                      <img src="https://images.unsplash.com/photo-1650504148053-ae51b12dc1d4" alt="" className="w-full h-full object-cover rounded-lg" />
+                    </div>
+                  )}
+                  {index === 1 && (
+                    <div className="absolute top-4 right-4 w-24 h-24 opacity-20">
+                      <img src="https://images.unsplash.com/photo-1650504149601-f9fdd445c187" alt="" className="w-full h-full object-cover rounded-lg" />
+                    </div>
+                  )}
+                  <div className="w-20 h-20 peach-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-md relative z-10">
                     <IconComponent className="h-10 w-10 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
