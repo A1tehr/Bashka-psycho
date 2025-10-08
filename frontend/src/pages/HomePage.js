@@ -305,27 +305,27 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-padding bg-gray-50" data-testid="testimonials-section">
+      <section className="section-padding bg-white" data-testid="testimonials-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Отзывы наших клиентов</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Отзывы наших клиентов</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Мы гордимся доверием наших клиентов и их успехами
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="scroll-reveal testimonial-card rounded-2xl p-6 text-white">
+              <div key={index} className="scroll-reveal testimonial-card rounded-soft-lg p-8 shadow-md">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-300 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-orange-500 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-8 w-8 text-purple-200 mb-4" />
-                <p className="text-lg mb-6 leading-relaxed">{testimonial.content}</p>
+                <Quote className="h-8 w-8 text-orange-300 mb-4" />
+                <p className="text-lg mb-6 leading-relaxed text-gray-700">{testimonial.content}</p>
                 <div>
-                  <div className="font-semibold text-lg">{testimonial.name}</div>
-                  <div className="text-purple-200">{testimonial.role}</div>
+                  <div className="font-bold text-lg text-gray-900">{testimonial.name}</div>
+                  <div className="text-gray-600">{testimonial.role}</div>
                 </div>
               </div>
             ))}
@@ -334,33 +334,33 @@ const HomePage = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="section-padding bg-indigo-600 text-white" data-testid="newsletter-section">
+      <section className="section-padding warm-gradient" data-testid="newsletter-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="scroll-reveal">
-            <h2 className="text-4xl font-bold mb-4">Будьте в курсе новостей</h2>
-            <p className="text-xl text-indigo-200 mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Будьте в курсе новостей</h2>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Подпишитесь на нашу рассылку и получайте полезные материалы по психологии и развитию
             </p>
             {subscribed ? (
-              <div className="bg-green-500 text-white p-4 rounded-lg max-w-md mx-auto slide-in-right">
-                <CheckCircle className="h-6 w-6 mx-auto mb-2" />
-                <p>Спасибо за подписку! Мы будем присылать вам интересные материалы.</p>
+              <div className="bg-green-500 text-white p-6 rounded-soft max-w-md mx-auto slide-in-right shadow-lg">
+                <CheckCircle className="h-8 w-8 mx-auto mb-3" />
+                <p className="text-lg font-medium">Спасибо за подписку! Мы будем присылать вам интересные материалы.</p>
               </div>
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Ваш email"
                     required
-                    className="flex-1 px-4 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white form-input"
+                    className="flex-1 px-6 py-4 rounded-full text-gray-900 border-2 border-orange-200 focus:outline-none focus:border-orange-400 form-input bg-white shadow-sm"
                     data-testid="newsletter-email-input"
                   />
                   <button
                     type="submit"
-                    className="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors btn-hover"
+                    className="btn-orange text-white px-8 py-4 rounded-full font-semibold shadow-lg"
                     data-testid="newsletter-submit-btn"
                   >
                     Подписаться
