@@ -382,21 +382,21 @@ html {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Gradient borders */
+/* Gradient borders - warm colors */
 .gradient-border {
   position: relative;
   background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+              linear-gradient(135deg, #ff7730 0%, #ff9255 100%) border-box;
   border: 2px solid transparent;
 }
 
-/* Pulse animation for CTA buttons */
+/* Pulse animation for CTA buttons - orange glow */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 20px rgba(255, 119, 48, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+    box-shadow: 0 0 40px rgba(255, 119, 48, 0.6);
   }
 }
 
