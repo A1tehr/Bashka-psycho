@@ -1,14 +1,30 @@
 version: '3.8'
 
 services:
+  nginx:
+    image: nginx:alpine
+    container_name: psycho_center_nginx
+    restart: always
+    volumes:
+      - ./docker/nginx/nginx.develop.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/sites:/etc/nginx/sites
+    ports:
+      - "80:80"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - psycho_network
+
   mongodb:
     image: mongo:7.0
     container_name: psycho_center_mongodb
     restart: always
     environment:
       - MONGO_INITDB_DATABASE=psychology_center
-    ports:
-      - "27017:27017"
+#    ports:
+#      - "27017:27017"
     volumes:
       - mongodb_data:/data/db
       - mongodb_config:/data/configdb
@@ -21,8 +37,8 @@ services:
       dockerfile: Dockerfile
     container_name: psycho_center_backend
     restart: always
-    ports:
-      - "8001:8001"
+#    ports:
+#      - "8001:8001"
     environment:
       - MONGO_URL=mongodb://mongodb:27017/psychology_center
       - PORT=8001
@@ -40,11 +56,11 @@ services:
       dockerfile: Dockerfile
     container_name: psycho_center_frontend
     restart: always
-    ports:
-      - "3000:3000"
-    environment:
-      - REACT_APP_BACKEND_URL=http://localhost:8001
-      - NODE_ENV=development
+#    ports:
+#      - "3000:3000"
+#    environment:
+#      - REACT_APP_BACKEND_URL=http://localhost:8001
+#      - NODE_ENV=development
     depends_on:
       - backend
     volumes:
