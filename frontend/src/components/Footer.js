@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Heart } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -10,12 +11,9 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">П</span>
-              </div>
+              <Logo />
               <div>
                 <h3 className="text-lg font-bold">Психологический центр</h3>
-                <p className="text-sm text-gray-400">развития</p>
               </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -137,7 +135,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 text-sm text-gray-400 mb-4 md:mb-0">
-              <span>© 2025 Психологический центр развития.</span>
+              <span>© 2025 Психологический центр VITA.</span>
               <Heart className="h-4 w-4 text-red-500" />
               <span>Сделано с любовью</span>
             </div>
