@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, User, Tag, Share2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, User, Tag, Share2 } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -49,17 +49,28 @@ const BlogPostPage = () => {
     });
   };
 
-  const handleShare = () => {
+  const handleShare = async () => {
     if (navigator.share) {
-      navigator.share({
-        title: post.title,
-        text: post.excerpt,
-        url: window.location.href,
-      });
+      try {
+        await navigator.share({
+          title: post.title,
+          text: post.excerpt,
+          url: window.location.href,
+        });
+      } catch (error) {
+        // User cancelled sharing or sharing failed
+        if (error.name !== 'AbortError') {
+          console.error('Error sharing:', error);
+        }
+      }
     } else {
       // Fallback to copying URL
-      navigator.clipboard.writeText(window.location.href);
-      // You could show a toast here
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Ссылка скопирована в буфер обмена!');
+      } catch (error) {
+        console.error('Error copying to clipboard:', error);
+      }
     }
   };
 

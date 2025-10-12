@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Heart } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -10,37 +11,26 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">П</span>
-              </div>
+              <Logo />
               <div>
                 <h3 className="text-lg font-bold">Психологический центр</h3>
-                <p className="text-sm text-gray-400">развития</p>
               </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Мы помогаем детям и взрослым раскрыть свой потенциал и достичь гармонии в жизни через профессиональные программы развития.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://vk.com/psycenter_vrn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"
-                data-testid="vk-link"
-              >
-                <span className="text-sm font-bold">ВК</span>
-              </a>
-              <a
-                href="https://instagram.com/psycenter_vrn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors"
-                data-testid="instagram-link"
-              >
-                <span className="text-sm font-bold">IG</span>
-              </a>
-            </div>
+            {/*// TODO: добавить соц сети*/}
+            {/*<div className="flex space-x-4">*/}
+            {/*  <a*/}
+            {/*    href="https://vk.com/psycenter_vrn"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"*/}
+            {/*    data-testid="vk-link"*/}
+            {/*  >*/}
+            {/*    <span className="text-sm font-bold">ВК</span>*/}
+            {/*  </a>*/}
+            {/*</div>*/}
           </div>
 
           {/* Quick links */}
@@ -126,8 +116,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-indigo-400 flex-shrink-0" />
-                <a href="mailto:info@psycenter-vrn.ru" className="text-gray-400 hover:text-white transition-colors">
-                  info@psycenter-vrn.ru
+                <a href="mailto:vitapsy.center@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  vitapsy.center@gmail.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
@@ -145,7 +135,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 text-sm text-gray-400 mb-4 md:mb-0">
-              <span>© 2025 Психологический центр развития.</span>
+              <span>© 2025 Психологический центр VITA.</span>
               <Heart className="h-4 w-4 text-red-500" />
               <span>Сделано с любовью</span>
             </div>

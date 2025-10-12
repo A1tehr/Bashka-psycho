@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
@@ -27,7 +27,8 @@ const AppointmentPage = () => {
     child_age: '',
     preferred_date: '',
     preferred_time: '',
-    message: ''
+    message: '',
+    privacy_accepted: false
   });
 
   useEffect(() => {
@@ -340,6 +341,29 @@ const AppointmentPage = () => {
                   />
                 </div>
 
+                {/* Privacy Policy Checkbox */}
+                <div className="flex items-start">
+                  <input
+                    type="checkbox"
+                    name="privacy_accepted"
+                    checked={formData.privacy_accepted}
+                    onChange={(e) => setFormData(prev => ({ ...prev, privacy_accepted: e.target.checked }))}
+                    required
+                    className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                  />
+                  <label className="ml-3 text-sm text-gray-700">
+                    Я ознакомился(лась) с{' '}
+                    <Link 
+                      to="/privacy" 
+                      target="_blank"
+                      className="text-indigo-600 hover:text-indigo-800 underline"
+                    >
+                      политикой конфиденциальности
+                    </Link>
+                    {' '}и согласен(на) на обработку персональных данных *
+                  </label>
+                </div>
+
                 {/* Submit Button */}
                 <button
                   type="submit"
@@ -375,7 +399,7 @@ const AppointmentPage = () => {
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-indigo-600" />
                   <a href="mailto:info@psycenter-vrn.ru" className="text-gray-700 hover:text-indigo-600 transition-colors">
-                    info@psycenter-vrn.ru
+                    vitapsy.center@gmail.com
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">

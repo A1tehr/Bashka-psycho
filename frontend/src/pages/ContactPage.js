@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
@@ -12,7 +13,8 @@ const ContactPage = () => {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    privacy_accepted: false
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -39,7 +41,8 @@ const ContactPage = () => {
           email: '',
           phone: '',
           subject: '',
-          message: ''
+          message: '',
+          privacy_accepted: false
         });
       }, 3000);
       
@@ -54,12 +57,12 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <section className="py-20" style={{ backgroundColor: '#F5F0E6', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6" data-testid="contact-title">
             Контакты
           </h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#5C5C5C' }}>
             Мы всегда готовы ответить на ваши вопросы и помочь вам начать путь к позитивным изменениям
           </p>
         </div>
@@ -109,11 +112,11 @@ const ContactPage = () => {
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-gray-900">Email</h3>
                       <a 
-                        href="mailto:info@psycenter-vrn.ru" 
+                        href="mailto:vitapsy.center@gmail.com"
                         className="text-green-600 hover:text-green-800 transition-colors font-medium"
                         data-testid="email-link"
                       >
-                        info@psycenter-vrn.ru
+                        vitapsy.center@gmail.com
                       </a>
                       <p className="text-sm text-gray-500 mt-1">Отвечаем в течение 2 часов</p>
                     </div>
@@ -152,32 +155,33 @@ const ContactPage = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white">
-                <h3 className="text-lg font-semibold mb-4">Мы в социальных сетях</h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://vk.com/psycenter_vrn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-                    data-testid="vk-social-link"
-                  >
-                    <span className="text-sm font-bold">ВК</span>
-                  </a>
-                  <a
-                    href="https://instagram.com/psycenter_vrn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-                    data-testid="instagram-social-link"
-                  >
-                    <span className="text-sm font-bold">IG</span>
-                  </a>
-                </div>
-                <p className="text-indigo-100 text-sm mt-4">
-                  Подписывайтесь на наши соцсети для получения полезных советов и новостей
-                </p>
-              </div>
+              {/*TODO: ДОБАВИТЬ СОЦ СЕТИ*/}
+              {/*<div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white">*/}
+              {/*  <h3 className="text-lg font-semibold mb-4">Мы в социальных сетях</h3>*/}
+              {/*  <div className="flex space-x-4">*/}
+              {/*    <a*/}
+              {/*      href="https://vk.com/psycenter_vrn"*/}
+              {/*      target="_blank"*/}
+              {/*      rel="noopener noreferrer"*/}
+              {/*      className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"*/}
+              {/*      data-testid="vk-social-link"*/}
+              {/*    >*/}
+              {/*      <span className="text-sm font-bold">ВК</span>*/}
+              {/*    </a>*/}
+              {/*    <a*/}
+              {/*      href="https://instagram.com/psycenter_vrn"*/}
+              {/*      target="_blank"*/}
+              {/*      rel="noopener noreferrer"*/}
+              {/*      className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"*/}
+              {/*      data-testid="instagram-social-link"*/}
+              {/*    >*/}
+              {/*      <span className="text-sm font-bold">IG</span>*/}
+              {/*    </a>*/}
+              {/*  </div>*/}
+              {/*  <p className="text-indigo-100 text-sm mt-4">*/}
+              {/*    Подписывайтесь на наши соцсети для получения полезных советов и новостей*/}
+              {/*  </p>*/}
+              {/*</div>*/}
             </div>
 
             {/* Contact Form */}
@@ -281,6 +285,29 @@ const ContactPage = () => {
                       placeholder="Опишите ваш вопрос или сообщение подробнее..."
                       data-testid="contact-message-textarea"
                     />
+                  </div>
+
+                  {/* Privacy Policy Checkbox */}
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      name="privacy_accepted"
+                      checked={formData.privacy_accepted}
+                      onChange={(e) => setFormData(prev => ({ ...prev, privacy_accepted: e.target.checked }))}
+                      required
+                      className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                    />
+                    <label className="ml-3 text-sm text-gray-700">
+                      Я ознакомился(лась) с{' '}
+                      <Link 
+                        to="/privacy" 
+                        target="_blank"
+                        className="text-indigo-600 hover:text-indigo-800 underline"
+                      >
+                        политикой конфиденциальности
+                      </Link>
+                      {' '}и согласен(на) на обработку персональных данных *
+                    </label>
                   </div>
 
                   <button

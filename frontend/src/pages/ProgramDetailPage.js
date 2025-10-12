@@ -226,7 +226,7 @@ const ProgramDetailPage = () => {
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-8">
               {/* Booking Card */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-8" data-testid="booking-card">
+              <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-8" style={{ zIndex: 10 }} data-testid="booking-card">
                 <div className="text-center mb-6">
                   <div className="text-4xl font-bold text-indigo-600 mb-2">
                     {program.price} ₽
