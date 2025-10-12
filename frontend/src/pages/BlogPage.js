@@ -50,12 +50,12 @@ const BlogPage = () => {
   return (
     <div className="blog-page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <section className="py-20" style={{ backgroundColor: '#F5F0E6', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6" data-testid="blog-title">
             Блог о психологии
           </h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#5C5C5C' }}>
             Полезные статьи о психологии, развитии детей и взрослых, советы от наших специалистов
           </p>
         </div>
@@ -64,19 +64,22 @@ const BlogPage = () => {
       {/* Search and Filter Section */}
       <section className="bg-white py-8 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
+          {/* Search */}
+          <div className="flex justify-center mb-8">
+            <div className="relative flex-1 max-w-md w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="text"
-                placeholder="Поиск по статьям..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                data-testid="blog-search-input"
+                  type="text"
+                  placeholder="Поиск по статьям..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  data-testid="blog-search-input"
               />
             </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
 
             {/* Tag Filter */}
             <div className="flex flex-wrap gap-2">

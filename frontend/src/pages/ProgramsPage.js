@@ -84,12 +84,12 @@ const ProgramsPage = () => {
   return (
     <div className="programs-page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <section className="text-white py-20" style={{ backgroundColor: '#F5F0E6', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6" data-testid="programs-title">
             Наши программы развития
           </h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#5C5C5C' }}>
             Выберите программу, которая поможет вам или вашему ребенку раскрыть потенциал и достичь новых высот
           </p>
         </div>

@@ -399,7 +399,7 @@ const AppointmentPage = () => {
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-indigo-600" />
                   <a href="mailto:info@psycenter-vrn.ru" className="text-gray-700 hover:text-indigo-600 transition-colors">
-                    info@psycenter-vrn.ru
+                    vitapsy.center@gmail.com
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">

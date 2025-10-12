@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <>
       {/* Top bar with contact info */}
-      <div className="bg-indigo-600 text-white py-2">
+      <div className="text-gray-900 py-2" style={{ backgroundColor: '#FFF', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
@@ -39,17 +39,18 @@ const Header = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@psycenter-vrn.ru" className="hover:text-indigo-200 transition-colors">
-                  info@psycenter-vrn.ru
+                <a href="mailto:vitapsy.center@gmail.com" className="hover:text-indigo-200 transition-colors">
+                  vitapsy.center@gmail.com
                 </a>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
               <span>г. Воронеж</span>
-              <div className="flex space-x-3">
-                <a href="#" className="hover:text-indigo-200 transition-colors">ВК</a>
-                <a href="#" className="hover:text-indigo-200 transition-colors">Instagram</a>
-              </div>
+              {/*TODO: добавить соцсети*/}
+              {/*<div className="flex space-x-3">*/}
+              {/*  <a href="#" className="hover:text-indigo-200 transition-colors">ВК</a>*/}
+              {/*  <a href="#" className="hover:text-indigo-200 transition-colors">Instagram</a>*/}
+              {/*</div>*/}
             </div>
           </div>
         </div>
@@ -68,7 +69,6 @@ const Header = () => {
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold text-gray-900">Психологический центр</h1>
-                <p className="text-sm text-gray-600">развития</p>
               </div>
             </Link>
 

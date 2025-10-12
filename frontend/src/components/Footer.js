@@ -21,17 +21,18 @@ const Footer = () => {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Мы помогаем детям и взрослым раскрыть свой потенциал и достичь гармонии в жизни через профессиональные программы развития.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://vk.com/psycenter_vrn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"
-                data-testid="vk-link"
-              >
-                <span className="text-sm font-bold">ВК</span>
-              </a>
-            </div>
+            {/*// TODO: добавить соц сети*/}
+            {/*<div className="flex space-x-4">*/}
+            {/*  <a*/}
+            {/*    href="https://vk.com/psycenter_vrn"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"*/}
+            {/*    data-testid="vk-link"*/}
+            {/*  >*/}
+            {/*    <span className="text-sm font-bold">ВК</span>*/}
+            {/*  </a>*/}
+            {/*</div>*/}
           </div>
 
           {/* Quick links */}
@@ -117,8 +118,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-indigo-400 flex-shrink-0" />
-                <a href="mailto:info@psycenter-vrn.ru" className="text-gray-400 hover:text-white transition-colors">
-                  info@psycenter-vrn.ru
+                <a href="mailto:vitapsy.center@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  vitapsy.center@gmail.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">

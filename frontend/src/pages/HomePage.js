@@ -97,7 +97,7 @@ const HomePage = () => {
     },
     {
       name: 'Дмитрий Петров',
-      role: 'Папа Софии, 12 лет',
+      role: 'Папа Софии, 15 лет',
       content: 'Индивидуальные консультации помогли дочери справиться с трудностями в учебе. Теперь она учится с удовольствием.',
       rating: 5
     },
@@ -120,13 +120,13 @@ const HomePage = () => {
     <div className="homepage relative">
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/79123456789"
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Связаться через WhatsApp"
+          href="https://wa.me/79038509090"
+          className="whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Связаться через WhatsApp"
       >
-        <MessageCircle className="w-8 h-8" style={{ marginTop: '16px', marginLeft: '16px' }} />
+        <MessageCircle className="w-8 h-8" />
       </a>
 
       {/* Hero Section with Modern Parallax Design */}
@@ -136,7 +136,7 @@ const HomePage = () => {
           {/* Back layer with gradient */}
 
           {/* Overlay with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-800/50 to-purple-900/60" />
+          {/*<div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-800/50 to-purple-900/60" />*/}
 
           <img
               src={homepageBackground}
@@ -205,12 +205,19 @@ const HomePage = () => {
           </div>
 
           {/* Quick Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 scroll-reveal">
+          <div
+              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 scroll-reveal p-6 rounded-xl"
+              style={{
+                backdropFilter: 'blur(4px)', // ← регулируй значение (например, 2px, 4px, 8px)
+                backgroundColor: 'rgba(0, 0, 0, 0.2)', // ← полупрозрачный фон для контраста
+                border: '1px solid rgba(255, 255, 255, 0.1)', // ← опционально: тонкая граница
+              }}
+          >
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
-              </div>
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
+                </div>
             ))}
           </div>
         </div>
@@ -243,14 +250,27 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-indigo-600 text-white">
+      <section
+          className="section-padding text-gray-900"
+          style={{ backgroundColor: '#F5F0E6' }} // ← тёплый бежевый фон
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
-              <div key={index} className="scroll-reveal">
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-indigo-200 text-lg">{stat.label}</div>
-              </div>
+                <div key={index} className="scroll-reveal">
+                  <div
+                      className="text-4xl md:text-5xl font-bold mb-2"
+                      style={{ color: '#2D2D2D' }} // ← тёмный цвет для цифр
+                  >
+                    {stat.number}
+                  </div>
+                  <div
+                      className="text-lg"
+                      style={{ color: '#5C5C5C' }} // ← серый цвет для подписей
+                  >
+                    {stat.label}
+                  </div>
+                </div>
             ))}
           </div>
         </div>
@@ -356,7 +376,7 @@ const HomePage = () => {
                     <Star key={i} className="h-5 w-5 text-yellow-300 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-8 w-8 text-purple-200 mb-4" />
+                {/*<Quote className="h-8 w-8 text-purple-200 mb-4" />*/}
                 <p className="text-lg mb-6 leading-relaxed">{testimonial.content}</p>
                 <div>
                   <div className="font-semibold text-lg">{testimonial.name}</div>
@@ -416,93 +436,97 @@ const HomePage = () => {
               Мы всегда готовы ответить на ваши вопросы и помочь в выборе программы развития
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Phone */}
-            <div className="text-center scroll-reveal">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-8 w-8" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              {/* Phone */}
+              <div className="text-center scroll-reveal">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Телефон</h3>
+                <p className="text-gray-300 mb-2">+7 (903) 850-90-90</p>
+                {/*<p className="text-gray-300">+7 (495) 123-45-67</p>*/}
               </div>
-              <h3 className="text-xl font-semibold mb-2">Телефон</h3>
-              <p className="text-gray-300 mb-2">+7 (912) 345-67-89</p>
-              <p className="text-gray-300">+7 (495) 123-45-67</p>
-            </div>
-            
-            {/* Address */}
-            <div className="text-center scroll-reveal">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-8 w-8" />
+
+              {/* Address */}
+              {/*// TODO: ДОБАВИТЬ АДРЕС ЕСЛИ ОН БУДЕТ*/}
+              {/*<div className="text-center scroll-reveal">*/}
+              {/*  <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">*/}
+              {/*    <MapPin className="h-8 w-8" />*/}
+              {/*  </div>*/}
+              {/*  <h3 className="text-xl font-semibold mb-2">Адрес</h3>*/}
+              {/*  <p className="text-gray-300 mb-2">г. Москва</p>*/}
+              {/*  <p className="text-gray-300">ул. Психологов, д. 15</p>*/}
+              {/*</div>*/}
+
+              {/* Working Hours */}
+              <div className="text-center scroll-reveal">
+                <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">График работы</h3>
+                <p className="text-gray-300 mb-2">Пн-Пт: 9:00-20:00</p>
+                <p className="text-gray-300">Сб-Вс: 10:00-18:00</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Адрес</h3>
-              <p className="text-gray-300 mb-2">г. Москва</p>
-              <p className="text-gray-300">ул. Психологов, д. 15</p>
-            </div>
-            
-            {/* Working Hours */}
-            <div className="text-center scroll-reveal">
-              <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8" />
+
+              {/* WhatsApp */}
+              <div className="text-center scroll-reveal">
+                <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
+                <p className="text-gray-300 mb-2">Быстрая связь</p>
+                <a
+                  href="https://wa.me/79038509090"
+                  className="text-green-400 hover:text-green-300 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Написать в WhatsApp
+                </a>
               </div>
-              <h3 className="text-xl font-semibold mb-2">График работы</h3>
-              <p className="text-gray-300 mb-2">Пн-Пт: 9:00-20:00</p>
-              <p className="text-gray-300">Сб-Вс: 10:00-18:00</p>
-            </div>
-            
-            {/* WhatsApp */}
-            <div className="text-center scroll-reveal">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
-              <p className="text-gray-300 mb-2">Быстрая связь</p>
-              <a 
-                href="https://wa.me/79123456789" 
-                className="text-green-400 hover:text-green-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Написать в WhatsApp
-              </a>
             </div>
           </div>
           
           {/* Social Media */}
           <div className="mt-16 text-center scroll-reveal">
-            <h3 className="text-2xl font-semibold mb-8">Мы в социальных сетях</h3>
-            <div className="flex justify-center space-x-6">
-              <a 
-                href="https://vk.com/psychocenter" 
-                className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="text-white font-bold">ВК</span>
-              </a>
-              <a 
-                href="https://instagram.com/psychocenter" 
-                className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="text-white font-bold">IG</span>
-              </a>
-              <a 
-                href="https://t.me/psychocenter" 
-                className="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="text-white font-bold">TG</span>
-              </a>
-              <a 
-                href="https://youtube.com/@psychocenter" 
-                className="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="text-white font-bold">YT</span>
-              </a>
-            </div>
+            {/*TODO: ДОБАВИТЬ СОЦ СЕТИ*/}
+            {/*<h3 className="text-2xl font-semibold mb-8">Мы в социальных сетях</h3>*/}
+            {/*<div className="flex justify-center space-x-6">*/}
+            {/*  <a */}
+            {/*    href="https://vk.com/psychocenter" */}
+            {/*    className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*  >*/}
+            {/*    <span className="text-white font-bold">ВК</span>*/}
+            {/*  </a>*/}
+            {/*  <a */}
+            {/*    href="https://instagram.com/psychocenter" */}
+            {/*    className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*  >*/}
+            {/*    <span className="text-white font-bold">IG</span>*/}
+            {/*  </a>*/}
+            {/*  <a */}
+            {/*    href="https://t.me/psychocenter" */}
+            {/*    className="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*  >*/}
+            {/*    <span className="text-white font-bold">TG</span>*/}
+            {/*  </a>*/}
+            {/*  <a */}
+            {/*    href="https://youtube.com/@psychocenter" */}
+            {/*    className="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*  >*/}
+            {/*    <span className="text-white font-bold">YT</span>*/}
+            {/*  </a>*/}
+            {/*</div>*/}
           </div>
         </div>
       </section>

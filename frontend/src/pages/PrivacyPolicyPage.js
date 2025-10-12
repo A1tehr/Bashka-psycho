@@ -323,8 +323,8 @@ const PrivacyPolicyPage = () => {
                   </div>
                   <div>
                     <p className="font-medium text-indigo-900 mb-1">Email:</p>
-                    <a href="mailto:info@psycenter-vrn.ru" className="text-indigo-600 hover:text-indigo-800">
-                      info@psycenter-vrn.ru
+                    <a href="mailto:vitapsy.center@gmail.com" className="text-indigo-600 hover:text-indigo-800">
+                      vitapsy.center@gmail.com
                     </a>
                   </div>
                 </div>
