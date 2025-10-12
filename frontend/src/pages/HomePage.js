@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Award, Clock, CheckCircle, Star, Quote, Phone, MapPin, MessageCircle } from 'lucide-react';
 import axios from 'axios';
 import AppointmentModal from '../components/AppointmentModal';
+import homepageBackground from '../assets/images/homepage_background.jpg';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -133,30 +134,29 @@ const HomePage = () => {
         {/* Animated Background Layers */}
         <div className="absolute inset-0">
           {/* Back layer with gradient */}
-          <div 
-            className="absolute inset-0 parallax-back"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1707130868349-3ed75fc7fe8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxncmFkaWVudCUyMGFic3RyYWN0fGVufDB8fHxibHVlfDE3NTkxNTA0NTN8MA&ixlib=rb-4.1.0&q=85)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.7
-            }}
+
+          {/* Overlay with gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-800/50 to-purple-900/60" />
+
+          <img
+              src={homepageBackground}
+              alt="Background"
+              style={{
+                width: '100%',
+                objectFit: 'contain',  // ← не обрезает, сохраняет пропорции
+              }}
           />
-          
+
           {/* Middle layer with nature */}
           <div 
             className="absolute inset-0"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1561765781-f7de2b8c56a5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxuYXR1cmUlMjBjYWxtfGVufDB8fHxibHVlfDE3NTkxNTA0NTl8MA&ixlib=rb-4.1.0&q=85)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               opacity: 0.3,
               backgroundAttachment: 'fixed'
             }}
           />
-          
-          {/* Overlay with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-800/50 to-purple-900/60" />
           
           {/* Floating geometric shapes */}
           <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
@@ -172,14 +172,15 @@ const HomePage = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Психологический центр
               <span className="block bg-gradient-to-r from-blue-200 via-purple-200 to-indigo-200 bg-clip-text text-transparent mt-2">
-                развития личности
+                Психологический центр
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed font-light">
-              Помогаем детям и взрослым раскрыть свой потенциал через современные методы психологического развития и индивидуальный подход
+              Создаем пространство, где ребенок учится понимать себя, общаться со сверстниками и управлять эмоциями.
+              <br/>
+              Профессиональная психологическая помощь для детей, подростков и взрослых.
             </p>
           </div>
 
