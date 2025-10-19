@@ -82,8 +82,38 @@ const ProgramsPage = () => {
     }
   };
 
+  // Schema.org structured data for programs listing
+  const programsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Программы психологического развития",
+    "description": "Программы всестороннего развития для детей и взрослых в психологическом центре",
+    "numberOfItems": programs.length,
+    "itemListElement": programs.slice(0, 6).map((program, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": program.title,
+        "description": program.description,
+        "provider": {
+          "@type": "Organization",
+          "name": "Психологический центр развития"
+        }
+      }
+    }))
+  };
+
   return (
     <div className="programs-page">
+      <SEO 
+        title="Программы развития"
+        description="Все программы психологического центра. Программы для детей и взрослых: дошкольная подготовка, раннее развитие, индивидуальные и групповые занятия, достижение целей. Выберите подходящую программу."
+        keywords="программы развития, детские программы, взрослые программы, психологические программы, дошкольная подготовка, раннее развитие, индивидуальные занятия"
+        canonical={`${BACKEND_URL}/programs`}
+        schemaMarkup={programsSchema}
+      />
+      
       {/* Hero Section */}
       <section className="text-white py-20" style={{ backgroundColor: '#F5F0E6', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
