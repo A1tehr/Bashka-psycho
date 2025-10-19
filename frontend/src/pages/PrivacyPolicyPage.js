@@ -1,10 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield, Lock, Eye, FileText } from 'lucide-react';
+import SEO from '../components/SEO';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const PrivacyPolicyPage = () => {
   return (
     <div className="privacy-policy-page">
+      <SEO 
+        title="Политика конфиденциальности"
+        description="Политика конфиденциальности персональных данных психологического центра развития. Условия обработки и защиты персональных данных."
+        keywords="политика конфиденциальности, обработка персональных данных, защита данных"
+        canonical={`${BACKEND_URL}/privacy`}
+      />
+      
       {/* Breadcrumb */}
       <section className="bg-gray-50 py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
