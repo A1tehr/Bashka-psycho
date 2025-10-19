@@ -48,8 +48,29 @@ const BlogPage = () => {
     return matchesSearch && matchesTag;
   });
 
+  // Schema.org structured data for blog
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Блог психологического центра развития",
+    "description": "Полезные статьи о психологии, развитии детей и взрослых, советы от профессиональных психологов",
+    "url": `${BACKEND_URL}/blog`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Психологический центр развития"
+    }
+  };
+
   return (
     <div className="blog-page">
+      <SEO 
+        title="Блог о психологии"
+        description="Читайте полезные статьи о психологии, развитии детей и взрослых. Советы и рекомендации от профессиональных психологов нашего центра."
+        keywords="блог психологии, статьи о психологии, развитие детей, советы психолога, психологические статьи"
+        canonical={`${BACKEND_URL}/blog`}
+        schemaMarkup={blogSchema}
+      />
+      
       {/* Hero Section */}
       <section className="py-20" style={{ backgroundColor: '#F5F0E6', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
