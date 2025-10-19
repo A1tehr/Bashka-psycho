@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'sonner';
 import { AuthProvider } from './contexts/AuthContext';
 import Header from './components/Header';
@@ -27,8 +28,9 @@ import './App.css';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <HelmetProvider>
+      <AuthProvider>
+        <Router>
         <div className="App min-h-screen bg-white">
           <Routes>
             {/* Public routes */}
