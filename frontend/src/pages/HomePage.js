@@ -117,8 +117,35 @@ const HomePage = () => {
     { number: '98%', label: 'Положительных отзывов' }
   ];
 
+  // Schema.org structured data for organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Психологический центр развития",
+    "description": "Профессиональный психологический центр развития в Москве. Программы всестороннего развития для детей и взрослых.",
+    "url": BACKEND_URL || "https://psycenter.ru",
+    "telephone": "+7-903-850-90-90",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Примерная, д. 123",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Fr 09:00-20:00, Sa 10:00-18:00",
+    "priceRange": "₽₽",
+    "image": `${BACKEND_URL}/images/og-default.jpg`
+  };
+
   return (
     <div className="homepage relative">
+      <SEO 
+        title="Главная"
+        description="Профессиональный психологический центр развития в Москве. Программы всестороннего развития для детей и взрослых. 500+ довольных клиентов. Консультации опытных психологов."
+        keywords="психологический центр, развитие детей, развитие взрослых, психолог Москва, консультация психолога, программы развития"
+        canonical={BACKEND_URL}
+        schemaMarkup={organizationSchema}
+      />
+      
       {/* WhatsApp Float Button */}
       <a
           href="https://wa.me/79038509090"
