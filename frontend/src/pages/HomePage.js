@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Award, Clock, CheckCircle, Star, Quote, Phone, MapPin, MessageCircle } from 'lucide-react';
 import axios from 'axios';
 import AppointmentModal from '../components/AppointmentModal';
+import SEO from '../components/SEO';
 import homepageBackground from '../assets/images/homepage_background.jpg';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
