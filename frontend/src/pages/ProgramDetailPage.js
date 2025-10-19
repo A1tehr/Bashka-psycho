@@ -73,8 +73,36 @@ const ProgramDetailPage = () => {
     );
   }
 
+  // Schema.org structured data for program
+  const programSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": program.title,
+    "description": program.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Психологический центр развития"
+    },
+    "serviceType": "Программа психологического развития",
+    "areaServed": "Москва",
+    "offers": {
+      "@type": "Offer",
+      "price": program.price,
+      "priceCurrency": "RUB"
+    }
+  };
+
   return (
     <div className="program-detail-page">
+      <SEO 
+        title={program.title}
+        description={program.description}
+        keywords={`${program.title}, программа развития, психологический центр, ${program.age_range}`}
+        ogImage={program.image_url}
+        canonical={`${BACKEND_URL}/programs/${program.id}`}
+        schemaMarkup={programSchema}
+      />
+      
       {/* Breadcrumb */}
       <section className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
