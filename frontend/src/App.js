@@ -117,6 +117,7 @@ function App() {
         </div>
       </Router>
     </AuthProvider>
+    </HelmetProvider>
   );
 }
 
