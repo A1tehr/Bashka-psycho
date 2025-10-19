@@ -1,20 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { hydrate, render } from "react-dom";
 import "@/index.css";
 import App from "@/App";
 
 const rootElement = document.getElementById("root");
 
-// Use hydrate for react-snap pre-rendered pages, render for normal
+// React 19 compatible hydration
 if (rootElement.hasChildNodes()) {
-  hydrate(
+  // For react-snap pre-rendered pages, use hydrateRoot
+  ReactDOM.hydrateRoot(
+    rootElement,
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
-    rootElement
+    </React.StrictMode>
   );
 } else {
+  // Normal client-side rendering
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
