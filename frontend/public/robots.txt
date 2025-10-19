@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://vita-psy.com/sitemap.xml
