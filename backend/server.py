@@ -434,6 +434,80 @@ async def update_settings(
         await db.site_settings.insert_one(new_settings.dict())
         return new_settings
 
+# SEO - Sitemap XML
+@app.get("/sitemap.xml", include_in_schema=False)
+async def get_sitemap():
+    """Generate dynamic sitemap.xml"""
+    from fastapi.responses import Response
+    
+    # Get all programs and blog posts for dynamic URLs
+    programs = await db.programs.find().to_list(length=100)
+    blog_posts = await db.blog_posts.find().to_list(length=100)
+    
+    # Base URL - получаем из переменных окружения
+    base_url = os.environ.get('BACKEND_URL', 'https://psycenter.ru')
+    
+    # Build XML sitemap
+    xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    
+    # Static pages with priority
+    static_pages = [
+        {'loc': '/', 'priority': '1.0', 'changefreq': 'daily'},
+        {'loc': '/programs', 'priority': '0.9', 'changefreq': 'weekly'},
+        {'loc': '/blog', 'priority': '0.8', 'changefreq': 'daily'},
+        {'loc': '/contacts', 'priority': '0.7', 'changefreq': 'monthly'},
+        {'loc': '/appointment', 'priority': '0.8', 'changefreq': 'monthly'},
+        {'loc': '/privacy', 'priority': '0.3', 'changefreq': 'yearly'},
+    ]
+    
+    for page in static_pages:
+        xml_content += '  <url>\n'
+        xml_content += f'    <loc>{base_url}{page["loc"]}</loc>\n'
+        xml_content += f'    <priority>{page["priority"]}</priority>\n'
+        xml_content += f'    <changefreq>{page["changefreq"]}</changefreq>\n'
+        xml_content += '  </url>\n'
+    
+    # Dynamic program pages (high priority)
+    for program in programs:
+        xml_content += '  <url>\n'
+        xml_content += f'    <loc>{base_url}/programs/{program["id"]}</loc>\n'
+        xml_content += '    <priority>0.9</priority>\n'
+        xml_content += '    <changefreq>weekly</changefreq>\n'
+        xml_content += '  </url>\n'
+    
+    # Dynamic blog post pages
+    for post in blog_posts:
+        xml_content += '  <url>\n'
+        xml_content += f'    <loc>{base_url}/blog/{post["slug"]}</loc>\n'
+        xml_content += '    <priority>0.7</priority>\n'
+        xml_content += '    <changefreq>monthly</changefreq>\n'
+        if 'published_at' in post:
+            xml_content += f'    <lastmod>{post["published_at"].strftime("%Y-%m-%d")}</lastmod>\n'
+        xml_content += '  </url>\n'
+    
+    xml_content += '</urlset>'
+    
+    return Response(content=xml_content, media_type="application/xml")
+
+# SEO - Robots.txt
+@app.get("/robots.txt", include_in_schema=False)
+async def get_robots():
+    """Generate robots.txt"""
+    from fastapi.responses import PlainTextResponse
+    
+    base_url = os.environ.get('BACKEND_URL', 'https://psycenter.ru')
+    
+    robots_content = f"""User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+
+Sitemap: {base_url}/sitemap.xml
+"""
+    
+    return PlainTextResponse(content=robots_content)
+
 # Initialize default data
 @app.on_event("startup")
 async def initialize_data():
