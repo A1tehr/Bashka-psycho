@@ -129,6 +129,13 @@ const AppointmentPage = () => {
 
   return (
     <div className="appointment-page bg-gray-50 min-h-screen py-12">
+      <SEO 
+        title="Записаться на консультацию"
+        description="Запишитесь на консультацию в психологическом центре развития. Заполните форму и мы свяжемся с вами для подтверждения."
+        keywords="записаться к психологу, консультация психолога, запись на прием, психолог онлайн запись"
+        canonical={`${BACKEND_URL}/appointment`}
+      />
+      
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
