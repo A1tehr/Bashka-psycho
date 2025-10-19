@@ -57,6 +57,13 @@ const ContactPage = () => {
 
   return (
     <div className="contact-page">
+      <SEO 
+        title="Контакты"
+        description="Свяжитесь с психологическим центром развития. Телефон: +7 (903) 850-90-90, адрес в Москве, график работы. Мы всегда готовы ответить на ваши вопросы."
+        keywords="контакты психологического центра, телефон психолога, адрес психологического центра, связаться с психологом"
+        canonical={`${BACKEND_URL}/contacts`}
+      />
+      
       {/* Hero Section */}
       <section className="py-20" style={{ backgroundColor: '#F5F0E6', color: '#2D2D2D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
