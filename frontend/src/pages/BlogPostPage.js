@@ -96,8 +96,40 @@ const BlogPostPage = () => {
     );
   }
 
+  // Schema.org structured data for article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image_url,
+    "datePublished": post.published_at,
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Психологический центр развития"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${BACKEND_URL}/blog/${post.slug}`
+    }
+  };
+
   return (
     <div className="blog-post-page">
+      <SEO 
+        title={post.title}
+        description={post.excerpt}
+        keywords={post.tags.join(', ')}
+        ogImage={post.image_url}
+        ogType="article"
+        canonical={`${BACKEND_URL}/blog/${post.slug}`}
+        schemaMarkup={articleSchema}
+      />
+      
       {/* Breadcrumb */}
       <section className="bg-gray-50 py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
