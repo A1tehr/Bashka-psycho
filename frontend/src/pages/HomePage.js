@@ -161,23 +161,23 @@ const HomePage = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" data-testid="hero-section">
         {/* Animated Background Layers */}
         <div className="absolute inset-0">
-          {/* Back layer with gradient */}
-
-          {/* Overlay with gradient */}
-          {/*<div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-800/50 to-purple-900/60" />*/}
-
+          {/* Background Image - Always covers full container */}
           <img
               src={homepageBackground}
               alt="Background"
+              className="absolute inset-0 w-full h-full"
               style={{
-                width: '100%',
-                objectFit: 'contain',  // ← не обрезает, сохраняет пропорции
+                objectFit: 'cover',  // ← покрывает весь контейнер
+                objectPosition: 'center',
               }}
           />
 
-          {/* Middle layer with nature */}
+          {/* Dark Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-800/60 to-purple-900/70" />
+
+          {/* Middle layer with nature effect */}
           <div 
-            className="absolute inset-0"
+            className="absolute inset-0 hidden md:block"
             style={{
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -186,65 +186,65 @@ const HomePage = () => {
             }}
           />
           
-          {/* Floating geometric shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
-          <div className="absolute bottom-40 right-32 w-48 h-48 bg-purple-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/3 right-20 w-24 h-24 bg-indigo-400/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
+          {/* Floating geometric shapes - hidden on mobile for performance */}
+          <div className="hidden sm:block absolute top-10 sm:top-20 left-10 sm:left-20 w-24 sm:w-32 h-24 sm:h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
+          <div className="hidden sm:block absolute bottom-20 sm:bottom-40 right-20 sm:right-32 w-32 sm:w-48 h-32 sm:h-48 bg-purple-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="hidden md:block absolute top-1/3 right-10 sm:right-20 w-20 sm:w-24 h-20 sm:h-24 bg-indigo-400/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 scroll-reveal">
-            <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-blue-100 font-medium mb-6">
+        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-0">
+          <div className="mb-6 sm:mb-8 scroll-reveal">
+            <div className="inline-block px-4 sm:px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-blue-100 font-medium mb-4 sm:mb-6 text-sm sm:text-base">
               ✨ Профессиональное развитие с заботой
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
               <span className="block bg-gradient-to-r from-blue-200 via-purple-200 to-indigo-200 bg-clip-text text-transparent mt-2">
                 Психологический центр
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-base sm:text-xl md:text-2xl mb-8 sm:mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed font-light px-2">
               Создаем пространство, где ребенок учится понимать себя, общаться со сверстниками и управлять эмоциями.
-              <br/>
-              Профессиональная психологическая помощь для детей, подростков и взрослых.
+              <br className="hidden sm:block"/>
+              <span className="block mt-2 sm:mt-0">Профессиональная психологическая помощь для детей, подростков и взрослых.</span>
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center scroll-reveal">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center scroll-reveal px-4">
             <button
               onClick={() => openAppointmentModal()}
-              className="group bg-white text-indigo-900 px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl btn-hover btn-pulse flex items-center"
+              className="group bg-white text-indigo-900 px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl btn-hover btn-pulse flex items-center w-full sm:w-auto justify-center"
               data-testid="hero-appointment-btn"
             >
               Записаться на консультацию
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </button>
             
             <Link
               to="/programs"
-              className="group border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all transform hover:scale-105 flex items-center"
+              className="group border-2 border-white/50 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all transform hover:scale-105 flex items-center w-full sm:w-auto justify-center"
               data-testid="hero-programs-btn"
             >
               Наши программы
-              <ArrowRight className="ml-3 h-5 w-5 opacity-70 group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 opacity-70 group-hover:translate-x-1 transition-all" />
             </Link>
           </div>
 
           {/* Quick Stats */}
           <div
-              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 scroll-reveal p-6 rounded-xl"
+              className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 scroll-reveal p-4 sm:p-6 rounded-xl mx-2"
               style={{
-                backdropFilter: 'blur(4px)', // ← регулируй значение (например, 2px, 4px, 8px)
-                backgroundColor: 'rgba(0, 0, 0, 0.2)', // ← полупрозрачный фон для контраста
-                border: '1px solid rgba(255, 255, 255, 0.1)', // ← опционально: тонкая граница
+                backdropFilter: 'blur(4px)',
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
               }}
           >
             {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">{stat.number}</div>
+                  <div className="text-blue-200 text-xs sm:text-sm md:text-base">{stat.label}</div>
                 </div>
             ))}
           </div>
