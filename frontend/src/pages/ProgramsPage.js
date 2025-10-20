@@ -279,7 +279,7 @@ const ProgramsPage = () => {
                 Получить консультацию
               </Link>
               <a
-                href="tel:+79038509090"
+                href="tel:+79175755221"
                 className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-all transform hover:scale-105"
                 data-testid="call-btn"
               >

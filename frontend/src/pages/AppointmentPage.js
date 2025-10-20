@@ -400,8 +400,8 @@ const AppointmentPage = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-indigo-600" />
-                  <a href="tel:+79038509090" className="text-gray-700 hover:text-indigo-600 transition-colors">
-                    +7 (903) 850-90-90
+                  <a href="tel:+79175755221" className="text-gray-700 hover:text-indigo-600 transition-colors">
+                    +7 (917) 575-52-21
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">

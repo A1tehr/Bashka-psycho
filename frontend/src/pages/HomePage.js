@@ -124,7 +124,7 @@ const HomePage = () => {
     "name": "Психологический центр развития",
     "description": "Профессиональный психологический центр развития в Москве. Программы всестороннего развития для детей и взрослых.",
     "url": BACKEND_URL || "https://psycenter.ru",
-    "telephone": "+7-903-850-90-90",
+    "telephone": "+7-917-575-52-21",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "ул. Примерная, д. 123",
@@ -148,7 +148,7 @@ const HomePage = () => {
       
       {/* WhatsApp Float Button */}
       <a
-          href="https://wa.me/79038509090"
+          href="https://wa.me/79175755221"
           className="whatsapp-float"
           target="_blank"
           rel="noopener noreferrer"
@@ -173,7 +173,7 @@ const HomePage = () => {
           />
 
           {/* Dark Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-800/60 to-purple-900/70" />
+          <div className="absolute inset-0" />
 
           {/* Middle layer with nature effect */}
           <div 
@@ -204,8 +204,8 @@ const HomePage = () => {
                 Психологический центр
               </span>
             </h1>
-            
-            <p className="text-base sm:text-xl md:text-2xl mb-8 sm:mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed font-light px-2">
+
+            <p className="text-base sm:text-xl md:text-2xl mb-8 sm:mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed font-medium px-2">
               Создаем пространство, где ребенок учится понимать себя, общаться со сверстниками и управлять эмоциями.
               <br className="hidden sm:block"/>
               <span className="block mt-2 sm:mt-0">Профессиональная психологическая помощь для детей, подростков и взрослых.</span>
@@ -473,8 +473,8 @@ const HomePage = () => {
                   <Phone className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Телефон</h3>
-                <p className="text-gray-300 mb-2">+7 (903) 850-90-90</p>
-                {/*<p className="text-gray-300">+7 (495) 123-45-67</p>*/}
+                <p className="text-gray-300 mb-2">+7 (917) 575-52-21</p>
+                {/*<p className="text-gray-300">+7 (917) 575-52-21</p>*/}
               </div>
 
               {/* Address */}
@@ -506,7 +506,7 @@ const HomePage = () => {
                 <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
                 <p className="text-gray-300 mb-2">Быстрая связь</p>
                 <a
-                  href="https://wa.me/79038509090"
+                  href="https://wa.me/79175755221"
                   className="text-green-400 hover:text-green-300 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"

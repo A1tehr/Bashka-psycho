@@ -104,14 +104,14 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-indigo-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">г. Воронеж</p>
+                  <p className="text-gray-400">г. Москва</p>
                   <p className="text-sm text-gray-500">Адрес уточняется при записи</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-indigo-400 flex-shrink-0" />
-                <a href="tel:+79038509090" className="text-gray-400 hover:text-white transition-colors">
-                  +7 (903) 850-90-90
+                <a href="tel:+79175755221" className="text-gray-400 hover:text-white transition-colors">
+                  +7 (917) 575-52-21
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -153,7 +153,7 @@ const Footer = () => {
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/79038509090?text=Здравствуйте! Хочу записаться на консультацию"
+        href="https://wa.me/79175755221?text=Здравствуйте! Хочу записаться на консультацию"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

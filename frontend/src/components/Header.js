@@ -34,8 +34,8 @@ const Header = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <a href="tel:+79038509090" className="hover:text-indigo-200 transition-colors">
-                  +7 (903) 850-90-90
+                <a href="tel:+79175755221" className="hover:text-indigo-200 transition-colors">
+                  +7 (917) 575-52-21
                 </a>
               </div>
               <div className="flex items-center space-x-2">
@@ -46,7 +46,7 @@ const Header = () => {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
-              <span>г. Воронеж</span>
+              <span>г. Москва</span>
               {/*TODO: добавить соцсети*/}
               {/*<div className="flex space-x-3">*/}
               {/*  <a href="#" className="hover:text-indigo-200 transition-colors">ВК</a>*/}

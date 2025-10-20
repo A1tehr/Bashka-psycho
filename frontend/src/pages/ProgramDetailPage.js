@@ -290,11 +290,11 @@ const ProgramDetailPage = () => {
                 
                 <div className="mt-4 text-center">
                   <a
-                    href="tel:+79038509090"
+                    href="tel:+79175755221"
                     className="text-indigo-600 hover:text-indigo-800 transition-colors text-sm font-medium"
                     data-testid="call-link"
                   >
-                    или позвоните +7 (903) 850-90-90
+                    или позвоните +7 (917) 575-52-21
                   </a>
                 </div>
               </div>

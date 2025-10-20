@@ -59,7 +59,7 @@ const ContactPage = () => {
     <div className="contact-page">
       <SEO 
         title="Контакты"
-        description="Свяжитесь с психологическим центром развития. Телефон: +7 (903) 850-90-90, адрес в Москве, график работы. Мы всегда готовы ответить на ваши вопросы."
+        description="Свяжитесь с психологическим центром развития. Телефон: +7 (917) 575-52-21, адрес в Москве, график работы. Мы всегда готовы ответить на ваши вопросы."
         keywords="контакты психологического центра, телефон психолога, адрес психологического центра, связаться с психологом"
         canonical={`${BACKEND_URL}/contacts`}
       />
@@ -100,11 +100,11 @@ const ContactPage = () => {
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-gray-900">Телефон</h3>
                       <a 
-                        href="tel:+79038509090" 
+                        href="tel:+79175755221"
                         className="text-indigo-600 hover:text-indigo-800 transition-colors font-medium"
                         data-testid="phone-link"
                       >
-                        +7 (903) 850-90-90
+                        +7 (917) 575-52-21
                       </a>
                       <p className="text-sm text-gray-500 mt-1">Звоните с 9:00 до 20:00</p>
                     </div>
@@ -139,7 +139,7 @@ const ContactPage = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-gray-900">Адрес</h3>
-                      <p className="text-purple-600 font-medium">г. Воронеж</p>
+                      <p className="text-purple-600 font-medium">г. Москва</p>
                       <p className="text-sm text-gray-500 mt-1">Точный адрес уточняется при записи</p>
                     </div>
                   </div>
@@ -394,14 +394,14 @@ const ContactPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+79038509090"
+              href="tel:+79175755221"
               className="bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors btn-hover"
               data-testid="cta-call-btn"
             >
               Позвонить сейчас
             </a>
             <a
-              href="https://wa.me/79038509090?text=Здравствуйте! Хочу записаться на консультацию"
+              href="https://wa.me/79175755221?text=Здравствуйте! Хочу записаться на консультацию"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors"
