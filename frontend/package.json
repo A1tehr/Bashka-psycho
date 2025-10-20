@@ -62,8 +62,9 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build && react-snap",
-    "test": "craco test"
+    "build": "craco build",
+    "test": "craco test",
+    "postbuild": "echo 'Build completed successfully! react-snap disabled for Docker compatibility.'"
   },
   "reactSnap": {
     "inlineCss": true,
