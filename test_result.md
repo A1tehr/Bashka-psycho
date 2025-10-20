@@ -334,6 +334,18 @@ frontend:
         agent: "main"
         comment: "Исправлена проблема с yarn build. React-snap не работал в Docker из-за Puppeteer/Chrome. Убран react-snap из build скрипта. Теперь yarn build работает корректно. SEO оптимизация через react-helmet сохранена. Production сборка создаётся успешно."
 
+  - task: "Мобильная адаптация Hero-секции"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/HomePage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Исправлена адаптация hero-секции для маленьких экранов (телефонов). Изображение теперь покрывает весь контейнер (objectFit: cover), добавлен темный overlay, адаптивные размеры текста и кнопок. Протестировано на iPhone (375px), iPad (768px), Desktop (1920px). Все размеры работают корректно."
+
 metadata:
   created_by: "main_agent"
   version: "2.1"
