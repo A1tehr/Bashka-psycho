@@ -316,11 +316,23 @@ frontend:
     file: "/app/frontend/src/components/SEO.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Реализована полная SEO оптимизация для многостраничности: 1) Установлены react-helmet-async и react-snap; 2) Создан компонент SEO с управлением мета-тегами (title, description, OG, Twitter, Schema.org); 3) Добавлены уникальные SEO мета-теги на все страницы (HomePage, ProgramsPage, ProgramDetailPage, BlogPage, BlogPostPage, ContactPage, AppointmentPage, PrivacyPolicyPage); 4) Настроен react-snap для pre-rendering статических HTML файлов; 5) Создан динамический sitemap.xml endpoint в backend с приоритетами (главная 1.0, программы 0.9); 6) Создан robots.txt; 7) Добавлена Schema.org разметка для всех типов страниц. Приоритет отдан главной странице и программам согласно требованиям."
+
+  - task: "Исправление проблемы сборки (Build Fix)"
+    implemented: true
+    working: true
+    file: "/app/frontend/package.json"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Исправлена проблема с yarn build. React-snap не работал в Docker из-за Puppeteer/Chrome. Убран react-snap из build скрипта. Теперь yarn build работает корректно. SEO оптимизация через react-helmet сохранена. Production сборка создаётся успешно."
 
 metadata:
   created_by: "main_agent"
