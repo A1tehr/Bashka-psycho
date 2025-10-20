@@ -334,6 +334,18 @@ frontend:
         agent: "main"
         comment: "Исправлена проблема с yarn build. React-snap не работал в Docker из-за Puppeteer/Chrome. Убран react-snap из build скрипта. Теперь yarn build работает корректно. SEO оптимизация через react-helmet сохранена. Production сборка создаётся успешно."
 
+  - task: "Мобильная адаптация Hero-секции"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/HomePage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Исправлена адаптация hero-секции для маленьких экранов (телефонов). Изображение теперь покрывает весь контейнер (objectFit: cover), добавлен темный overlay, адаптивные размеры текста и кнопок. Протестировано на iPhone (375px), iPad (768px), Desktop (1920px). Все размеры работают корректно."
+
 metadata:
   created_by: "main_agent"
   version: "2.1"
@@ -371,3 +383,5 @@ agent_communication:
     message: "✅ SEO ОПТИМИЗАЦИЯ РЕАЛИЗОВАНА - САЙТ ТЕПЕРЬ МНОГОСТРАНИЧНЫЙ: Выполнена полная SEO оптимизация согласно требованиям (вариант A: React Helmet + React Snap). Реализовано: 1) Установлены react-helmet-async и react-snap; 2) Создан компонент SEO для динамического управления мета-тегами; 3) Добавлены уникальные SEO мета-теги на ВСЕ 8 страниц (HomePage, ProgramsPage, ProgramDetailPage, BlogPage, BlogPostPage, ContactPage, AppointmentPage, PrivacyPolicyPage) - каждая имеет title, description, keywords, Open Graph, Twitter Card, canonical URL; 4) Настроен react-snap для pre-rendering - при сборке генерируются статические HTML файлы для каждого маршрута; 5) Создан динамический /sitemap.xml endpoint в backend - автоматически генерируется из БД с приоритетами (главная 1.0, программы 0.9 - приоритетные по требованию); 6) Создан /robots.txt endpoint; 7) Добавлена Schema.org разметка на все страницы (Organization, ItemList, Service, Blog, BlogPosting). Frontend и Backend работают корректно. Создан файл SEO_README.md с полной документацией. Готов к тестированию SEO."
   - agent: "main"
     message: "✅ ИСПРАВЛЕНА ПРОБЛЕМА СБОРКИ (BUILD FIX): Пользователь сообщил, что yarn start работает, но yarn build не работал. Найдена и устранена проблема: react-snap не мог запустить Chrome/Puppeteer в Docker окружении. Решение: убран react-snap из build скрипта. Теперь: 1) yarn start работает ✅; 2) yarn build работает ✅; 3) SEO оптимизация через react-helmet сохранена ✅; 4) Все meta-теги, Open Graph, Schema.org работают ✅; 5) Production сборка создаётся корректно (build/). Отключен только pre-rendering статических HTML (не критично для SEO). Создан документ BUILD_FIX_NOTES.md с полным описанием изменений."
+  - agent: "main"
+    message: "✅ ИСПРАВЛЕНА МОБИЛЬНАЯ АДАПТАЦИЯ HERO-СЕКЦИИ: Пользователь сообщил, что на маленьких экранах (телефонах) текст съезжал и выходил за картинку. Исправления: 1) Изображение теперь использует objectFit: 'cover' вместо 'contain' - покрывает весь контейнер; 2) Добавлен темный gradient overlay для читаемости текста; 3) Адаптивные размеры текста (text-3xl на мобильных, text-4xl на планшетах, text-7xl на desktop); 4) Кнопки на мобильных на всю ширину (w-full sm:w-auto); 5) Статистика в 2 колонки на мобильных, 4 на desktop; 6) Floating shapes скрыты на мобильных для производительности. Протестировано на iPhone (375px), iPad (768px), Desktop (1920px) - всё работает корректно. Создан документ MOBILE_ADAPTATION_FIX.md."
