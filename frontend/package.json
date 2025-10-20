@@ -64,6 +64,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "production": "craco build && serve -s build",
     "postbuild": "echo 'Build completed successfully! react-snap disabled for Docker compatibility.'"
   },
   "reactSnap": {

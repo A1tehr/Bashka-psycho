@@ -2,8 +2,8 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-# Copy package files
-COPY package.json ./
+# Copy package files (including yarn.lock for consistency)
+COPY package.json yarn.lock ./
 
 # Install dependencies
 RUN yarn install --frozen-lockfile
@@ -14,5 +14,7 @@ COPY . .
 # Expose port
 EXPOSE 3000
 
+RUN yarn global add serve
+
 # Start the application
-CMD ["yarn", "start"]
+CMD ["yarn", "production"]

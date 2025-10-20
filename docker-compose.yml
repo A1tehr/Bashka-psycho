@@ -68,7 +68,7 @@ services:
       - /app/node_modules
     networks:
       - psycho_network
-    command: yarn start
+    command: yarn production
 
 networks:
   psycho_network:
